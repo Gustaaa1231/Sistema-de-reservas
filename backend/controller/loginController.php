@@ -36,6 +36,7 @@ class LoginController
                 session_start();
                 // Armazena o ID do usuário na sessão para uso posterior
                 $_SESSION["id_usuario"] = $usuario[0]["id_usuario"];
+                $_SESSION["nome"] = $usuario[0]["id_usuario"];
                 // Retorna verdadeiro para indicar que o login foi bem-sucedido
                 return true;
             } else {

@@ -16,6 +16,7 @@
             <input type="text" name="nome" placeholder="Nome">
             <input type="text" name="senha" placeholder="senha">
             <button type="submit">Logar</button>
+            <?php require "./components/InputComponent.php"?>
         </div>
     </form>
 </body>

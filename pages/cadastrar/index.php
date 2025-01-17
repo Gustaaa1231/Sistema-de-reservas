@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
         <?php } ?>
 
         <form action="<?php echo "../../backend/router/userRouter.php?acao=$acao" ?>" method="POST">
-            <input type="hidden" name="idUsuario" value="<?php echo $usuario["id"]; ?>">
+            <input type="hidden" name="idUsuario" value="<?php echo $usuario["id_usuario"]; ?>">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>
 

@@ -38,10 +38,10 @@ $usuarios = $userController->GetAllUser();
                         <td><?php echo $usuario['nome']; ?></td>
                         <td><?php echo $usuario['senha']; ?></td>
                         <td class="action-buttons">
-                            <a href="../cadastrar/index.php?id=<?php echo $usuario['id']; ?>" class="button">Editar</a>
+                            <a href="../cadastrar/index.php?id=<?php echo $usuario['id_usuario']; ?>" class="button">Editar</a>
 
                             <form action="../../backend/router/userRouter.php?acao=deletar" method="POST">
-                                <input type="hidden" name="idUsuario" value="<?php echo $usuario['id']; ?>">
+                                <input type="hidden" name="idUsuario" value="<?php echo $usuario['id_usuario']; ?>">
                                 <button type="submit" name="deletar" class="button deletar-button">Deletar</button>
                             </form>
                         </td>

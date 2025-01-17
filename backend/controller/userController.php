@@ -43,7 +43,7 @@ class UserController
 
     public function DeleteUser($id){
         try {
-            $sql = "DELETE FROM usuario WHERE id = :id";
+            $sql = "DELETE FROM usuario WHERE id_usuario = :id";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":id", $id);
             if($db->execute()){
@@ -76,7 +76,7 @@ class UserController
 
     public function GetUserById($id){
         try {
-            $sql = "SELECT * FROM usuario WHERE id = :id";
+            $sql = "SELECT * FROM usuario WHERE id_usuario = :id";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":id", $id);
             $db->execute();
