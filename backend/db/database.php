@@ -3,7 +3,7 @@
 class Database
 {
     private $server = "localhost"; 
-    private $dbnome = "turma31";   
+    private $dbnome = "SistemaDeReservas";   
     private $user = "root";        
     private $pass = "";           
 

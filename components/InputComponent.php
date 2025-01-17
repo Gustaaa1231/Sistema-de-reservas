@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="InputStyle.php">
-</head>
-<body>
-    <form action="foo.php" method="post">
-        <label for="nome">
-            Nome:
-            <br>
-            <input type="text" name="username" /><br />
-        </label>
-        <label for="">
-            Email:
-            <br>
-            <input type="text" name="email" /><br />
-        </label>
-        <label for="">
-            Telefone:
-            <br>
-            <input type="tel" name="telefone" /><br />
-        </label>
-    </form>
-</body>
-</html>
-
 <style>
 
-    input{
-        color: black;
-        width: 20%;
-        height: 100%;
-        border-radius: 4px;
-    }
-    input:focus{
-        background-color: cornflowerblue;
-    }
-</style>                                      
+.input-field { padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px; 
+}
+.input-field:focus{
+    border: 1px solid #2779B8;
+    box-shadow: 0.1px 0rem 5px 0rem#2779B8
+}
+</style>
+
+<input type="text" class="input-field" placeholder="Digite seu nome">
