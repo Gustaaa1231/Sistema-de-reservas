@@ -16,4 +16,4 @@
 }
 </style>
 
-<input type="text" class="input-field" placeholder="Digite seu nome">
+<input type="password" class="input-field" placeholder="Digite seu nome">

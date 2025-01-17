@@ -17,4 +17,4 @@
         background-color: #004494; /* Azul ainda mais escuro quando clicado */
     }
 </style>
-<button class="button">Reservar Agora</button>
+<button class="button" type="submit">Reservar Agora</button>

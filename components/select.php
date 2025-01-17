@@ -7,11 +7,12 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
 <style>
 /* O container deve ser posicionado como relativo: */
 .custom-select {
   position: relative;
-  font-family: Arial;
+  font-family: "ABeeZee", serif;
 }
 
 .custom-select select {
