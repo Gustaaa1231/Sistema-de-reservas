@@ -56,6 +56,7 @@ if (isset($_GET['id'])) {
             <button type="submit"><?php echo $buttonTitle; ?></button>
         </form>
     </div>
+    
 </body>
 
 </html>
