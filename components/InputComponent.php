@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="InputStyle.php">
 </head>
 <body>
     <form action="foo.php" method="post">
@@ -28,6 +29,13 @@
 
 <style>
 
-
-
-</style>
+    input{
+        color: black;
+        width: 20%;
+        height: 100%;
+        border-radius: 4px;
+    }
+    input:focus{
+        background-color: cornflowerblue;
+    }
+</style>                                      
