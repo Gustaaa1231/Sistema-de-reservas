@@ -27,5 +27,8 @@
     outline: none;
 }
 </style>
-
-<input style="font-family: ABeeZee, serif;" type="text" class="input-field" placeholder="Digite seu nome">
+<?php 
+function InputComponent($typ, $place, $name  ){
+    echo "<input style='font-family: ABeeZee, serif;'name='$name' type='$typ' class='input-field' placeholder='$place'>";
+}
+?>

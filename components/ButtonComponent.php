@@ -30,4 +30,8 @@
         background-color: #004494; /* Azul ainda mais escuro quando clicado */
     }
 </style>
-<button style="margin-top: 3px;" class="button" type="submit">Entrar</button>
+<?php function ButtonComponent($type){
+
+    echo"<button style='margin-top: 3px;' class='button' type='$type'>Entrar</button>";
+}
+?>

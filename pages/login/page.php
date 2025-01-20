@@ -1,3 +1,7 @@
+<?php include '../../components/InputComponent.php';
+    include '../../components/ButtonComponent.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +24,13 @@
                     <p style="padding-bottom: 5px;  font-size:2vw">Entrar</p>
                 </div>
         
-                <form method="POST" style="display: flex; flex-direction:column; gap:10px"  action="">
+                <form method="POST" style="display: flex; flex-direction:column; gap:10px"  action="../../backend/router/loginRouter.php?acao=validarLogin">
                     <label for="">Usuário</label>
-                    <?php include '../../components/InputComponent.php';?>
+                    <?php InputComponent("text", "Usuário", "nome")?>
                     <label for="">Senha</label>
-                    <?php include '../../components/InputPassword.php';?>
-                    <?php include '../../components/ButtonComponent.php';?>
+                    <?php InputComponent("password", "Senha", "senha" );
+                    ButtonComponent("submit");?>
+
                     
         
                 </form>
