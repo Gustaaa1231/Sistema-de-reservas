@@ -25,6 +25,7 @@
                     <?php include '../../components/InputComponent.php';?>
                     <label for="">Senha</label>
                     <?php include '../../components/InputPassword.php';?>
+                    <?php include '../../components/ButtonComponent.php';?>
                     
         
                 </form>

@@ -1,4 +1,16 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 <style>
 
 .input-field { padding: 10px;
@@ -16,4 +28,4 @@
 }
 </style>
 
-<input type="text" class="input-field" placeholder="Digite seu nome">
+<input style="font-family: ABeeZee, serif;" type="text" class="input-field" placeholder="Digite seu nome">
