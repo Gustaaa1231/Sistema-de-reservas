@@ -18,25 +18,14 @@ $usuarios = $userController->GetAllUser();
     <title>Home</title>
 </head>
 <body>
-
-<div class="all">
-    <div class="left-side">
-        <div class="reservation">
-            <form action="POST">
-
-                <h1>Cadastro de Reserva</h1>
-                <input type="text" placeholder="Nome do cliente">
-                <input type="date">
-            </form>
-        </div>
-    </div>
-    <div class="mid">
-        
-    </div>
-    <div class="right-side"></div>
-</div>
+    <?php include '../../components/sidebar.php';?>
 
 
+
+
+
+</body>
+</html>
 
 <!-- <div class="container">
         <a href="../cadastrar/index.php" class="button">Cadastrar</a>
@@ -71,9 +60,6 @@ $usuarios = $userController->GetAllUser();
             </tbody>
         </table>
     </div> -->
-</body>
-</html>
-
 
 <style>
  *{
