@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-<!DOCTYPE html>
-<!-- Coding by CodingNepal | www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> Drop Down Sidebar Menu | CodingLab </title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Boxiocns CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div style="display: flex; align-items: center; justify-content: center;" class="logo-details">
       
       <span class="logo_name">Playspace</span>
@@ -77,10 +57,18 @@
   </div>
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' ></i>
+      <i style="color:#2779B8;" class='bx bx-menu' ></i>
       
     </div>
+    <div>
+      <?php
+      include "../../components/slider.php"
+      ?>
+
+    </div>
   </section>
+  
+
   <script>
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
@@ -96,11 +84,7 @@
     sidebar.classList.toggle("close");
   });
   </script>
-</body>
-</html>
-  
-</body>
-</html>
+
 
 <style>
 
@@ -315,6 +299,7 @@
   font-size: 12px;
 }
 .home-section{
+  display: flex;
   position: relative;
   background: #E4E9F7;
   height: 100vh;
@@ -327,9 +312,9 @@
   width: calc(100% - 78px);
 }
 .home-section .home-content{
-  height: 60px;
+  height: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
