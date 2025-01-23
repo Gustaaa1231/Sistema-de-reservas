@@ -33,18 +33,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  min-height: 100vh;
-  background: -webkit-linear-gradient(136deg, rgb(224,195,252) 0%, rgb(142,197,252) 100%);
-}
+
 .wrapper{
   position: relative;
-  width: 900px;
-  height: 500px;
+  width:900px;
+  height: 400px;
   border-radius: 20px;  /* Borda mais suave */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
   overflow: hidden;
-  margin: 100px;
+  margin-top: 20px;
+  
 }
 .wrapper .img {
   position: absolute;
@@ -93,7 +91,7 @@ body{
   display: flex;
 }
 .wrapper .sliders label{
-  border: 2px solid rgb(142,197,252);
+  border: 2px solid #2779B8;
   width: 13px;
   height: 13px;
   margin: 0 3px;
@@ -108,7 +106,7 @@ body{
 #five:checked ~ .sliders label.five{
   width: 35px;
   border-radius: 14px;
-  background: rgb(142,197,252);
+  background: #2779B8 ;
 }
 .sliders label:hover{
   background: rgb(142,197,252);

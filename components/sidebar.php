@@ -1,28 +1,41 @@
-<div class="sidebar close">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  
+  <div class="sidebar close">
     <div style="display: flex; align-items: center; justify-content: center;" class="logo-details">
       
-      <span class="logo_name">Playspace</span>
-    </div>
-    <ul class="nav-links">
-      <li>
+    <span style="font-family: ABeeZee, serif;" class="logo_name">Playspace</span>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <a href="#">
+        <i class='bx bx-grid-alt' ></i>
+        <span style="font-family: ABeeZee, serif;" class="link_name">Home</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a style="font-family: ABeeZee, serif;" class="link_name" href="#">Home</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="iocn-link">
         <a href="#">
-          <i class='bx bx-grid-alt' ></i>
-          <span class="link_name">Home</span>
+          <i class='bx bx-collection' ></i>
+          <span class="link_name">Reservas</span>
         </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Home</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Reservas</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Reservas</a></li>
+        <i class='bx bxs-chevron-down arrow' ></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a class="link_name" href="#">Reservas</a></li>
           <li><a href="#">Minhas Reservas</a></li>
         </ul>
       </li>
@@ -54,27 +67,40 @@
     
   </li>
 </ul>
+</div>
+<section class="home-section">
+  <div class="home-content">
+    <i style="color:#2779B8;" class='bx bx-menu' ></i>
+    
   </div>
-  <section class="home-section">
-    <div class="home-content">
-      <i style="color:#2779B8;" class='bx bx-menu' ></i>
-      
-    </div>
-    <div>
-      <?php
-      include "../../components/slider.php"
+  <div style="display: flex; flex-direction: column; align-items: center;" class="sla">
+    <?php
+      include "../../components/slider.php";
       ?>
+  <div>
+    <?php
+    include "../../components/cards.php"
+    ?>
+  </div>
 
+</div>
+<div>
+  <?php
+      include "../../components/sidebar2.php"
+      ?>
     </div>
+    
   </section>
   
-
+</body>
+</html>
+  
   <script>
-  let arrow = document.querySelectorAll(".arrow");
+    let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e)=>{
-   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
-   arrowParent.classList.toggle("showMenu");
+      let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+      arrowParent.classList.toggle("showMenu");
     });
   }
   let sidebar = document.querySelector(".sidebar");
@@ -87,6 +113,13 @@
 
 
 <style>
+
+  .sla{
+    display: flex;
+    width: 100%;
+    height: 100rem
+    
+  }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
@@ -125,6 +158,7 @@
 }
 .sidebar .logo-details .logo_name{
   font-size: 22px;
+  font-family: "ABeeZee, serif";
   color: #2779B8;
   font-weight: 600;
   transition: 0.3s ease;

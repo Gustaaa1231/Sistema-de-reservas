@@ -7,7 +7,9 @@
 </head>
 <body>
 
-    
+    <?php
+    include "../../components/sidebar2.php"
+    ?>
     
 </body>
 </html>

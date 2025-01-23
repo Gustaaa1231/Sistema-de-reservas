@@ -17,8 +17,10 @@ $usuarios = $userController->GetAllUser();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    
 </head>
-<body>
+<body style="font-family: ABeeZee, serif;">
     <?php include '../../components/sidebar.php';?>
     
     
