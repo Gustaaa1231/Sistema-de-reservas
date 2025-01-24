@@ -77,13 +77,13 @@
     <?php
       include "slider.php";
       ?>
-  <div>
-    <?php
-    include "cards.php"
-    ?>
-  </div>
+    <div>
+      <?php
+      include "cards.php"
+     ?>
+    </div>
 
-</div>
+  </div>
 <div>
   <?php
       include "sidebar2.php"

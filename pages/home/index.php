@@ -5,6 +5,7 @@ if (!isset($_SESSION["id_usuario"])) {
     
 }
 require_once __DIR__ . '/../../backend/controller/userController.php';
+require "../../components/InputComponent.php";
 
 $userController = new UserController();
 $usuarios = $userController->GetAllUser();
@@ -22,21 +23,24 @@ $usuarios = $userController->GetAllUser();
 </head>
 <body style="font-family: ABeeZee, serif;">
     <?php include '../../components/sidebar.php';?>
-    <form action="POST">
+    <form action="../../backend/router/reservaRouter.php?acao=reservar" method="POST">
         <div class="popup-overlay" id="popupOverlay"></div>
         <div class="popup" id="popup">
             <div class="content">
                 <div id="header">
                     <div class="header-content">
-                        <h1>teste</h1>
+                        <h2>Reservar</h2>
                     </div>
                     <div id="exit-btn" onclick="fecharPopup()">
-                        <img id="exit" src="../../image/exit.svg" alt="" height="32px">
+                        <img id="exit" src="../../image/exit.svg" alt="Fechar popup svg">
                     </div>
                 </div>
-                    <p>Este é um popup personalizado!</p> 
                 <img class="popupimage" src="../../image/Quadra background.jpg">
-                <button class="popup-btn" onclick="fecharPopup()">Fechar</button>
+                <?php InputComponent("text", "Nome do cliente", "name_cliente") ?>
+                <?php InputComponent("text", "Insira o email", "email_cliente") ?>
+                <?php InputComponent("number", "Insira o número de telefone (xx) xxxxx-xxxxx", "number") ?>
+                <?php InputComponent("date", "", "calendar") ?>
+                <?php ButtonComponent("fecharPopup()", "submit", "Confirmar"); ?>
             </div>
         </div>
     </form>
@@ -55,56 +59,62 @@ $usuarios = $userController->GetAllUser();
     height: 40%;
 }
 .popupimage{
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
 }
 .popup {
     display: none;
-        position: fixed;
-        width: 25rem;
-        height: 25rem;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
+    position: fixed;
+    width: 33rem;
+    height: 35rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-radius: 1rem;
     }
 .content{
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 #header{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    justify-content: flex-end;
 }
 #exit-btn{
     width: 32px;
     height: 32px;
-    margin-left: 2rem;
+    margin-left: 10rem;
     cursor: pointer;
 }
 .popup-btn{
     width: 100%;
     height: 50px;
 }
+.input-field{
+    margin-bottom: 0;
+}
 
-    .popup-overlay {
-        display: flex;
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-    }
-    </style>
+.popup-overlay {
+    display: flex;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+</style>
     
 <script>
 function mostrarPopup() {
