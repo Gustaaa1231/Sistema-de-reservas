@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-</body>
-</html>
-
 <style>
     .button {
         background-color: #2779B8; /* Azul escuro */
@@ -30,8 +17,8 @@
         background-color: #004494; /* Azul ainda mais escuro quando clicado */
     }
 </style>
-<?php function ButtonComponent($type){
+<?php function ButtonComponent($onclick,$type, $title) {
 
-    echo"<button style='margin-top: 3px;' class='button' type='$type'>Entrar</button>";
+    echo"<button style='margin-top: 3px;' onclick='$onclick' class='button' type='$type'>$title</button>";
 }
 ?>

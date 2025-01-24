@@ -1,5 +1,5 @@
-<?php include '../../components/InputComponent.php';
-    include '../../components/ButtonComponent.php'
+<?php include 'components/InputComponent.php';
+    include 'components/ButtonComponent.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
     <div style="display: flex; " class="body">
         <div class="image">
-            <img src="../../image/Quadra background.jpg" alt="">
+            <img src="image/Quadra background.jpg" alt="">
         </div>
 
         <div style="width: 100vw ; display: flex; flex-direction:column; gap: 50px; align-items: center; justify-content: center;">
@@ -24,12 +24,12 @@
                     <p style="padding-bottom: 5px;  font-size:2vw">Entrar</p>
                 </div>
         
-                <form method="POST" style="display: flex; flex-direction:column; gap:10px"  action="../../backend/router/loginRouter.php?acao=validarLogin">
+                <form method="POST" style="display: flex; flex-direction:column; gap:10px"  action="backend/router/loginRouter.php?acao=validarLogin">
                     <label for="">Usuário</label>
                     <?php InputComponent("text", "Usuário", "nome")?>
                     <label for="">Senha</label>
                     <?php InputComponent("password", "Senha", "senha" );
-                    ButtonComponent("submit");?>
+                    ButtonComponent("","submit", "Entrar");?>
 
                     
         
@@ -40,10 +40,6 @@
 
 
     </div>
-    
-
-
-    
 </body>
 </html>
 
@@ -58,8 +54,6 @@ body{
 .input-field{
     width: 21rem;
 }
-
-
 
 img{
     width: 850px;
@@ -80,8 +74,4 @@ img{
     justify-content: center;
 
 }
-
-
-
-
 </style>

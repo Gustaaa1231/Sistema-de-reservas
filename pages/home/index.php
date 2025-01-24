@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["id_usuario"])) {
-    header('Location: ../../index.php');
+    header('Location: ../../page.php');
     
 }
 require_once __DIR__ . '/../../backend/controller/userController.php';
@@ -22,17 +22,102 @@ $usuarios = $userController->GetAllUser();
 </head>
 <body style="font-family: ABeeZee, serif;">
     <?php include '../../components/sidebar.php';?>
-    
-    
-    
-
-
-
-
-
-
+    <form action="POST">
+        <div class="popup-overlay" id="popupOverlay"></div>
+        <div class="popup" id="popup">
+            <div class="content">
+                <div id="header">
+                    <div class="header-content">
+                        <h1>teste</h1>
+                    </div>
+                    <div id="exit-btn" onclick="fecharPopup()">
+                        <img id="exit" src="../../image/exit.svg" alt="" height="32px">
+                    </div>
+                </div>
+                    <p>Este é um popup personalizado!</p> 
+                <img class="popupimage" src="../../image/Quadra background.jpg">
+                <button class="popup-btn" onclick="fecharPopup()">Fechar</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
+
+
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.image img{
+    width: 28rem;
+    height: 40%;
+}
+.popupimage{
+    width: 200px;
+    height: 100px;
+}
+.popup {
+    display: none;
+        position: fixed;
+        width: 25rem;
+        height: 25rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#exit-btn{
+    width: 32px;
+    height: 32px;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+.popup-btn{
+    width: 100%;
+    height: 50px;
+}
+
+    .popup-overlay {
+        display: flex;
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    </style>
+    
+<script>
+function mostrarPopup() {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('popupOverlay').style.display = 'block';
+}
+
+    function fecharPopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popupOverlay').style.display = 'none';
+}
+
+</script>
 
 <!-- <div class="container">
         <a href="../cadastrar/index.php" class="button">Cadastrar</a>
@@ -46,154 +131,26 @@ $usuarios = $userController->GetAllUser();
                 </tr>
             </thead>
             <tbody>
-                <?php
+            <?php
                 foreach ($usuarios as $usuario) {
-                ?>
+                    ?>
                     <tr>
                         <td><?php echo $usuario['nome']; ?></td>
                         <td><?php echo $usuario['senha']; ?></td>
                         <td class="action-buttons">
                             <a href="../cadastrar/index.php?id=<?php echo $usuario['id_usuario']; ?>" class="button">Editar</a>
-
+                            
                             <form action="../../backend/router/userRouter.php?acao=deletar" method="POST">
                                 <input type="hidden" name="idUsuario" value="<?php echo $usuario['id_usuario']; ?>">
                                 <button type="submit" name="deletar" class="button deletar-button">Deletar</button>
                             </form>
                         </td>
                     </tr>
-                <?php
+                    <?php
                 }
                 ?>
             </tbody>
         </table>
     </div> -->
 
-<style>
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.all{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    background-image: url("../../image/Quadra\ background.jpg");
-    background-repeat: no-repeat;
-
-}
-.left-side{
-    border: 1px solid black;
-    height: 100vh;
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.left-side h1{
-    text-align: center;
-    margin-top: 2rem;
-}
-.mid{
-    border:1px solid black ;
-    height: 100vh;
-    width: 25%;
-}
-.image img{
-    width: 28rem;
-    height: 40%;
-}
-.right-side{
-    border: 1px solid black;
-    background-color: aqua;
-    height: 100vh;
-    width: 35%;
-
-
-}
-    /* 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 800px;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #000;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #333;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-}
-
-th {
-    background-color: #000;
-    color: #fff;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.action-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.action-buttons .button {
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-.deletar-button {
-    background-color: #ff4d4d;
-}
-
-.deletar-button:hover {
-    background-color: #cc0000;
-}
-
-form {
-    display: inline-block;
-} */
-</style>
+    

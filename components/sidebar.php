@@ -75,18 +75,18 @@
   </div>
   <div style="display: flex; flex-direction: column; align-items: center;" class="sla">
     <?php
-      include "../../components/slider.php";
+      include "slider.php";
       ?>
   <div>
     <?php
-    include "../../components/cards.php"
+    include "cards.php"
     ?>
   </div>
 
 </div>
 <div>
   <?php
-      include "../../components/sidebar2.php"
+      include "sidebar2.php"
       ?>
     </div>
     
@@ -113,13 +113,6 @@
 
 
 <style>
-
-  .sla{
-    display: flex;
-    width: 100%;
-    height: 100rem
-    
-  }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
@@ -346,7 +339,7 @@
   width: calc(100% - 78px);
 }
 .home-section .home-content{
-  height: 100%;
+  height: 2rem;
   display: flex;
   justify-content: center;
 }
@@ -384,8 +377,5 @@
   }
 }
 
-img{
-  width: 10px;
-  height: 10px;
-}
+
 </style>

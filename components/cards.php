@@ -1,47 +1,51 @@
+<?php require "ButtonComponent.php";
+function description($description) {
+  echo "$description";
+}
+?>
+
 <div class="wrap">
   <div class="box">
     <div class="box-top">
       <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
       <div class="title-flex">
         <h3 class="box-title">Tênis</h3>
-        <p class="user-follow-info">17 Projects</p>
       </div>
-      <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
+      <p class="description"><?php description("A quadra de tênis é uma área retangular cruzada ao meio por uma rede baixa.
+       Ela pode ser preparada e marcada para jogos de simples ou duplas. Existem diferentes tipos de quadras, como saibro, grama e piso duro.") ?></p>
     </div>
-    <a href="#" class="button">Follow Kelsie</a>
+    <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
   </div>
   <div class="box">
     <div class="box-top">
       <img class="box-image" src="../../image/volei.jpg" alt="Girl Eating Pizza">
       <div class="title-flex">
         <h3 class="box-title">Vôlei</h3>
-        <p class="user-follow-info">33 Projects</p>
       </div>
-      <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
+      <p class="description"><?php description("A quadra de vôlei é retangular e está dividida por uma rede.
+      Ela representa a área do jogo, que é disputado entre duas equipes composta por 6 jogadores cada.") ?></p>
     </div>
-    <a href="#" class="button">Follow Mark</a>
+    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
   <div class="box">
     <div class="box-top">
       <img class="box-image" src="../../image/futsal.jpg" alt="Girl Eating Pizza">
       <div class="title-flex">
         <h3 class="box-title">Futsal</h3>
-        <p class="user-follow-info">26 Projects</p>
       </div>
       <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
     </div>
-    <a href="#" class="button">Follow Taylor</a>
+    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
   <div class="box">
     <div class="box-top">
       <img class="box-image" src="../../image/basquete.jpg" alt="Girl Eating Pizza">
       <div class="title-flex">
         <h3 class="box-title">Basquete</h3>
-        <p class="user-follow-info">12 Projects</p>
       </div>
       <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
     </div>
-    <a href="#" class="button">Follow Isaiah</a>
+    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
 </div>
 
@@ -84,14 +88,10 @@ p {
   white-space: wrap;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .wrap {
   display: flex;
-  justify: space-between;
+  justify-content: space-between;
   align-items: stretch;
   width: 100%;
   gap: 24px;
@@ -133,7 +133,7 @@ a {
   border-bottom: 2px solid #2779B8;
   padding-left: 12px;
   display: flex;
-
+  
   justify-content: center;
 }
 
@@ -141,7 +141,12 @@ a {
   color: hsl(0, 0%, 60%);
 }
 
-.button {
+/* .reserva-btn {
+  text-decoration: none;
+  color: inherit;
+} */
+
+/* .reserva-btn {
   display: block;
   justify-content: center;
   align-items: center;
@@ -152,11 +157,11 @@ a {
   background: transparent;
   box-shadow: 0px 0px 0px 1px black inset;
   transition: background 0.4s ease;
-}
+} */
 
-.button:hover {
+/* .reserva-btn:hover {
   background: var(--purple);
-}
+} */
 
 .fill-one {
   background: var(--light-bg);
