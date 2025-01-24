@@ -4,17 +4,74 @@ function description($description) {
 }
 ?>
 
-<div class="wrap">
+
+<div class="listaPrincipal">
+    <div class="caixaInicial">
+        <div class="informacoes">
+          <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
+          <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
+            <h3 class="">Tênis</h3>
+            <p class="">Uma quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
+          </div>
+        </div>
+        <div class="botao">
+          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+        </div>
+    </div>
+    <div class="caixaInicial">
+        <div class="informacoes">
+          <img class="box-image" src="../../image/volei.jpg" alt="Tênis">
+          <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
+            <h3 class="">Vôlei</h3>
+            <p class="">Uma quadra de Vôlei é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
+          </div>
+        </div>
+        <div class="botao">
+          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+        </div>
+    </div>
+    <div class="caixaInicial">
+        <div class="informacoes">
+          <img class="box-image" src="../../image/basquete.jpg" alt="Tênis">
+          <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
+            <h3 class="">Basquete</h3>
+            <p class="">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
+          </div>
+        </div>
+        <div class="botao">
+          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+        </div>
+    </div>
+    <div class="caixaInicial">
+        <div class="informacoes">
+          <img class="box-image" src="../../image/futsal.jpg" alt="Tênis">
+          <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
+            <h3 class="">Futsal</h3>
+            <p class="">Uma quadra de Futsal é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
+          </div>
+        </div>
+        <div class="botao">
+          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="wrap">
   <div class="box">
     <div class="box-top">
-      <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
-      <div class="title-flex">
-        <h3 class="box-title">Tênis</h3>
+      <div>
+        <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
+        <div class="title-flex">
+          <h3 class="box-title">Tênis</h3>
+          <p class="description">A quadra de tênis é uma área retangular cruzada ao meio por uma rede baixa.
+           Ela pode ser preparada e marcada para jogos de simples ou duplas.</p>
+        </div>
       </div>
-      <p class="description"><?php description("A quadra de tênis é uma área retangular cruzada ao meio por uma rede baixa.
-       Ela pode ser preparada e marcada para jogos de simples ou duplas. Existem diferentes tipos de quadras, como saibro, grama e piso duro.") ?></p>
-    </div>
-    <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+      <div>
+        <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
+
+      </div>
+      </div>
   </div>
   <div class="box">
     <div class="box-top">
@@ -22,20 +79,22 @@ function description($description) {
       <div class="title-flex">
         <h3 class="box-title">Vôlei</h3>
       </div>
-      <p class="description"><?php description("A quadra de vôlei é retangular e está dividida por uma rede.
-      Ela representa a área do jogo, que é disputado entre duas equipes composta por 6 jogadores cada.") ?></p>
+      <p class="description">A quadra de vôlei é retangular e está dividida por uma rede.
+      Ela representa a área do jogo, que é disputado entre duas equipes composta por 6 jogadores cada.</p>
+      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
     </div>
-    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
   <div class="box">
     <div class="box-top">
-      <img class="box-image" src="../../image/futsal.jpg" alt="Girl Eating Pizza">
+      <div>
+        <img class="box-image" src="../../image/futsal.jpg" alt="Girl Eating Pizza">
+      </div>
       <div class="title-flex">
         <h3 class="box-title">Futsal</h3>
+        <p class="description">Uma quadra de futsal é um espaço esportivo de dimensões reduzidas, geralmente coberto, com piso liso para a prática do futsal.</p>
       </div>
-      <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
+      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
     </div>
-    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
   <div class="box">
     <div class="box-top">
@@ -43,11 +102,11 @@ function description($description) {
       <div class="title-flex">
         <h3 class="box-title">Basquete</h3>
       </div>
-      <p class="description">Whipped steamed roast cream beans macchiato skinny grinder café. Iced grinder go mocha steamed grounds cultivar panna aroma.</p>
+      <p class="descriptiimgbotaoon">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
     </div>
-    <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
+      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
   </div>
-</div>
+</div> -->
 
 <style>
 * {
@@ -72,6 +131,37 @@ body {
   color: var(--dark);
 }
 
+.listaPrincipal{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px;
+  
+  
+}
+
+.botao{
+  width: 100%;
+}
+
+.informacao{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+
+
+.caixaInicial{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+}
+
 h3 {
   font-size: 1.5em;
   font-weight: 700;
@@ -86,6 +176,7 @@ p {
 
 .description {
   white-space: wrap;
+  font-size: 14px;
 }
 
 
@@ -102,36 +193,38 @@ p {
 .box {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  position: relative;
-  padding: 24px;
+  padding: 20px;
   background: #fff;
+  border-radius: 10px;
 }
+
+
 
 .box-top {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   position: relative;
-  gap: 12px;
-  margin-bottom: 36px;
+  justify-content: space-between;
+  gap: 14px; */
 }
-
 .box-image {
   width: 100%;
-  height: 360px;
+  height: 280px;
   object-fit: cover;
   object-position: 50% 20%;
+  border-radius: 10px;
 }
 
 .title-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .box-title {
   border-bottom: 2px solid #2779B8;
-  padding-left: 12px;
+  
   display: flex;
   
   justify-content: center;

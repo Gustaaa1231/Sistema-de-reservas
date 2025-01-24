@@ -19,6 +19,6 @@
 </style>
 <?php function ButtonComponent($onclick,$type, $title) {
 
-    echo"<button style='margin-top: 3px;' onclick='$onclick' class='button' type='$type'>$title</button>";
+    echo"<button style='margin-top: 3px; width: 100%;' onclick='$onclick' class='button' type='$type'>$title</button>";
 }
 ?>

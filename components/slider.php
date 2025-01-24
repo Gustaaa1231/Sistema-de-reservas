@@ -23,7 +23,6 @@
         <label for="two" class="two"></label>
         <label for="three" class="three"></label>
         <label for="four" class="four"></label>
-        <label for="five" class="five"></label>
       </div>
     </div>
 
@@ -37,7 +36,7 @@
 .wrapper{
   position: relative;
   width:900px;
-  height: 400px;
+  height: 500px;
   border-radius: 20px;  /* Borda mais suave */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
   overflow: hidden;
@@ -75,13 +74,7 @@
 #four:checked ~ .img-4 img{
   clip-path: circle(150% at 0% 100%);
 }
-#five:checked ~ .img-1 img,
-#five:checked ~ .img-2 img,
-#five:checked ~ .img-3 img,
-#five:checked ~ .img-4 img,
-#five:checked ~ .img-5 img{
-  clip-path: circle(150% at 0% 100%);
-}
+
 .wrapper .sliders{
   position: absolute;
   bottom: 20px;
