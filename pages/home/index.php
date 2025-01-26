@@ -26,21 +26,31 @@ $usuarios = $userController->GetAllUser();
     <form action="../../backend/router/reservaRouter.php?acao=reservar" method="POST">
         <div class="popup-overlay" id="popupOverlay"></div>
         <div class="popup" id="popup">
+            <div style="width:100%; display:flex; justify-content: flex-end; margin-bottom: 10px;">
+                <div id="exit-btn" onclick="fecharPopup()">
+                    <img id="exit" src="../../image/exit.svg" alt="Fechar popup svg">
+                </div>
+            </div>
             <div class="content">
                 <div id="header">
-                    <div class="header-content">
-                        <h2>Reservar</h2>
-                    </div>
-                    <div id="exit-btn" onclick="fecharPopup()">
-                        <img id="exit" src="../../image/exit.svg" alt="Fechar popup svg">
+                    <div style="padding-top: 10px; padding-bottom: 10px;  border-bottom: 3px solid #2779B8;" class="header-content">
+                        <h2 style="font-family: ABeeZee, serif;">Reservar</h2>
                     </div>
                 </div>
-                <img class="popupimage" src="../../image/Quadra background.jpg">
-                <?php InputComponent("text", "Nome do cliente", "name_cliente") ?>
-                <?php InputComponent("text", "Insira o email", "email_cliente") ?>
-                <?php InputComponent("number", "Insira o número de telefone (xx) xxxxx-xxxxx", "number") ?>
-                <?php InputComponent("date", "", "calendar") ?>
-                <?php ButtonComponent("fecharPopup()", "submit", "Confirmar"); ?>
+                <div style="width:100%; gap: 16px; padding: 20px;  display: flex; flex-direction:column; ">
+                    <form method="POST" style="" >
+                        <label for="">Nome</label>
+                        <?php InputComponent("text", "Digite nome", "name_cliente") ?>
+                        <label for="">Email</label>
+                        <?php InputComponent("email", "Digite o email", "email_cliente") ?>
+                        <label for="">Telefone</label>
+                        <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number") ?>
+                        <label for="">Data da Reserva</label>
+                        <?php InputComponent("date", "", "calendar") ?>
+                    
+                        <?php ButtonComponent("fecharPopup()", "submit", "Confirmar"); ?>
+                    </form>
+                </div>
             </div>
         </div>
     </form>
@@ -70,7 +80,9 @@ $usuarios = $userController->GetAllUser();
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
+    padding: 14px;
+    gap:10px;
+    
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -80,19 +92,19 @@ $usuarios = $userController->GetAllUser();
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    
 }
 #header{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    justify-content: flex-end;
+    
 }
 #exit-btn{
-    width: 32px;
-    height: 32px;
-    margin-left: 10rem;
+    width: 12px;
+    height: 12px;
+    
     cursor: pointer;
 }
 .popup-btn{

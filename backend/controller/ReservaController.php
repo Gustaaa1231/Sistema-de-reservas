@@ -25,7 +25,7 @@ class ReservaController
             $db->bindParam(":nome", $nome);
             $db->bindParam(":email", $email);
             $db->bindParam(":telefone", $telefone);
-            $db->bindParam(":datas", $datas);
+    
             if($db->execute()){
                 return true;
             }else{
