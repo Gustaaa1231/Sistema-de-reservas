@@ -49,7 +49,7 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Suporte</a></li>
-          <li><a href="#">Fale Conosco</a></li>
+          <li><a href="../Fale-conosco/index.php">Fale Conosco</a></li>
           <li><a href="#">Central de Atendimento</a></li>
           <li><a href="#">Poítica de Privacidade</a></li>
         </ul>

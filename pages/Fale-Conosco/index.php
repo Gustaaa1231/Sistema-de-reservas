@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color:rgb(231, 231, 231);
             margin: 0;
             padding: 0;
         }
@@ -18,9 +18,8 @@
             padding: 20px;
             text-align: center;
         }
-
         section {
-            padding: 20px;
+            padding: 15px;
         }
 
         h2 {
@@ -40,90 +39,48 @@
         .team-member {
             text-align: center;
         }
-
-        .team-member img {
-            width: 200px;  
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 50%; 
-            border: 2px solid black;
-            transition: transform 0.3s;
-        }
-
-
-        .team-member img:hover {
-            transform: scale(1.1);
-        }
-
-        .contact-info, .contact-info2 {
-            margin-top: 10px;
-        }
-
-        .contact-info a, .contact-info2 a {
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 0 10px;
-        }
-
-        .contact-info a:hover, .contact-info2 a:hover {
-            color: #007bff;
-        }
+        .emphasis {
+            text-emphasis: filled; 
+            text-emphasis-color:rgba(128, 159, 188, 0.99);
+        } 
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Fale Conosco</h1>
-</header>
-
-<section>
-    <h2>Entre em Contato</h2>
-    <p style="text-align: center;">Tem alguma dúvida ou quer conversar conosco? Fique à vontade para nos seguir nas redes sociais ou acessar nosso GitHub!</p>
-
+<header>Fale Conosco</header>
+<div class="team-member" >
+            <p>Contatos</p>
+            <div class="contact-info">
+                <a>empresaseria@service.com</a>
+            </div>
+</div>
+<h2 style="text-align: center;">Sobre a empresa...</h2>
+<section>    
     <div class="team-photos">
         <div class="team-member">
-            <img src="../../image/IMG-20241231-WA0051.jpg" alt="Luan">
             <p>Luan</p>
             <div class="contact-info">
-                <a href="https://github.com/seu-github" target="_blank">GitHub</a>
-            </div>
-            <div class="contact-info2">
-                <a href="https://www.instagram.com/seu-instagram" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">Linkedin</a>
             </div>
         </div>
         <div class="team-member">
-            <img src="../../image/FotoGusta.jpg" alt="Gustavo">
             <p>Gustavo</p>
             <div class="contact-info">
-                <a href="https://github.com/seu-github" target="_blank">GitHub</a>
-            </div>
-            <div class="contact-info2">
-                <a href="https://www.instagram.com/seu-instagram" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">Linkedin</a>
             </div>
         </div>
         <div class="team-member">
-            <img src="../../image/IMG_3844.jpeg" alt="Henrique">
             <p>Henrique</p>
-            <div class="contact-info">
-                <a href="https://github.com/seu-github" target="_blank">GitHub</a>
-            </div>
             <div class="contact-info2">
-                <a href="https://www.instagram.com/seu-instagram" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">Linkedin</a>
             </div>
         </div>
         <div class="team-member">
-            <img src="../../image/foto-de-perfil.jpg" alt="Bruna">
             <p>Bruna</p>
-            <div class="contact-info">
-                <a href="https://github.com/seu-github" target="_blank">GitHub</a>
-            </div>
             <div class="contact-info2">
-                <a href="https://www.instagram.com/seu-instagram" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">Linkedin</a>
             </div>
-        </div>
-    </div>
+     
 </section>
-
 </body>
 </html>
