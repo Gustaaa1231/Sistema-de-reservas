@@ -3,27 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
-    <title>Calendário Janeiro</title>
+    <title>Calendário 2025</title>
     <style>
-        
 
         .calendar {
             text-align: center;
-             
         }
 
         .calendar h2 {
             margin-bottom: 20px;
             font-size: 24px;
-            
+        }
+
+        .calendar .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .navigation button {
+            background-color: #2779B8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .navigation button:disabled {
+            background-color: #b0bec5;
+            cursor: not-allowed;
+        }
+
+        .navigation button:hover:not(:disabled) {
+            background-color: #004494;
         }
 
         .days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 10px;
-            
         }
 
         .day-form {
@@ -49,63 +69,80 @@
             color: #333;
             background-color: #f0f0f0;
         }
-
-        .highlight-pink {
-            background-color: #d500f9;
-            color: #fff;
-        }
-
-        .highlight-blue {
-            background-color: #2779B8;
-            color: #fff;
-        }
-
-        .highlight-purple {
-            background-color: #b39ddb;
-            color: #fff;
-        }
     </style>
 </head>
 <body>
     <div class="calendar">
-        <h2 style="font-family: ABeeZee, serif;">Janeiro</h2>
-        <div class="days">
-            <!-- Dias do calendário representados por formulários -->
-            <form class="day-form"><button type="submit" class="day">29</button></form>
-            <form class="day-form"><button type="submit" class="day">30</button></form>
-            <form class="day-form"><button type="submit" class="day">31</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">1</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">2</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">3</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">4</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">5</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">6</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">7</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">8</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">9</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">10</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">11</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">12</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">13</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">14</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">15</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">16</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">17</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">18</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">19</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">20</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">21</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">22</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">23</button></form>
-            <form class="day-form"><button type="submit" class="day highlight-blue">24</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">25</button></form>
-            <form class="day-form"><button type="submit" class="day highlight-blue">26</button></form>
-            <form class="day-form"><button type="submit" class="day highlight-blue">27</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">28</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">29</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">30</button></form>
-            <form class="day-form"><button type="submit" class="day current-month">31</button></form>
+        <div class="navigation">
+            <button id="prevMonth">Anterior</button>
+            <button id="nextMonth">Próximo</button>
         </div>
+        <h2 style="font-family: ABeeZee, serif;" id="monthName">Janeiro 2025</h2>
+        <div class="days" id="calendarDays"></div>
     </div>
+
+    <script>
+        const months = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        const daysInMonth = (month) => new Date(2025, month + 1, 0).getDate();
+
+        let currentMonth = 0;  // Inicia em janeiro de 2025
+        const currentYear = 2025;
+
+        const monthName = document.getElementById("monthName");
+        const calendarDays = document.getElementById("calendarDays");
+
+        function renderCalendar() {
+            calendarDays.innerHTML = "";  // Limpar os dias anteriores
+            monthName.textContent = `${months[currentMonth]} ${currentYear}`;
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const totalDays = daysInMonth(currentMonth);
+
+            // Preencher dias em branco antes do início do mês
+            for (let i = 0; i < firstDay; i++) {
+                const blankDay = document.createElement("div");
+                blankDay.classList.add("day");
+                calendarDays.appendChild(blankDay);
+            }
+
+            // Adicionar dias do mês
+            for (let day = 1; day <= totalDays; day++) {
+                const form = document.createElement("form");
+                form.classList.add("day-form");
+
+                const button = document.createElement("button");
+                button.type = "submit";
+                button.classList.add("day", "current-month");
+                button.textContent = day;
+
+                form.appendChild(button);
+                calendarDays.appendChild(form);
+            }
+
+            // Desabilitar botões de navegação quando no limite do ano 2025
+            document.getElementById("prevMonth").disabled = currentMonth === 0;
+            document.getElementById("nextMonth").disabled = currentMonth === 11;
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", () => {
+            if (currentMonth > 0) {
+                currentMonth--;
+                renderCalendar();
+            }
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", () => {
+            if (currentMonth < 11) {
+                currentMonth++;
+                renderCalendar();
+            }
+        });
+
+        renderCalendar();
+    </script>
 </body>
 </html>
