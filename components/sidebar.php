@@ -73,11 +73,14 @@
     <i style="color:#2779B8;" class='bx bx-menu' ></i>
     
   </div>
-  <div style="display: flex; flex-direction: column; align-items: center;" class="sla">
+  <div style="display: flex; flex-direction: column;  align-items: center;" class="sla">
+    <div>
+
     <?php
       include "slider.php";
       ?>
-    <div>
+    </div>
+    <div style="display:flex; justify-content:center; align-items:center;">
       <?php
       include "cards.php"
      ?>
@@ -329,9 +332,9 @@
   display: flex;
   position: relative;
   background: #E4E9F7;
-  height: 100vh;
+  height: 100%;
   left: 260px;
-  width: calc(100% - 260px);
+  width: calc(100% - 360px);
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section{

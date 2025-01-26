@@ -35,8 +35,8 @@
 
 .wrapper{
   position: relative;
-  width:900px;
-  height: 500px;
+  width:800px;
+  height: 300px;
   border-radius: 20px;  /* Borda mais suave */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra */
   overflow: hidden;
