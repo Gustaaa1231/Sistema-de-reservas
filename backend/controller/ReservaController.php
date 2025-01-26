@@ -16,14 +16,16 @@ class ReservaController
     }
 
     // Método responsável por realizar o login
-    public function Reservar($nome, $telefone, $email, $data){
+    public function Reservar($nome, $email, $telefone, $datas){
         try {
 
            
-            $sql = "INSERT INTO reservas (nome,senha) VALUES(:nome,:senha)";
+            $sql = "INSERT INTO clientes (nome,email,telefone) VALUES(:nome,:email,:telefone)";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":nome", $nome);
-            $db->bindParam(":senha", $senha);
+            $db->bindParam(":email", $email);
+            $db->bindParam(":telefone", $telefone);
+            $db->bindParam(":datas", $datas);
             if($db->execute()){
                 return true;
             }else{
