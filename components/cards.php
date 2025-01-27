@@ -140,6 +140,19 @@ body {
   
 }
 
+@media (max-width: 480px){
+
+  .listaPrincipal{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px;
+  flex-wrap: wrap;
+  
+  
+}
+}
+
 .botao{
   width: 100%;
 }

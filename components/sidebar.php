@@ -73,7 +73,12 @@
     <i style="color:#2779B8;" class='bx bx-menu' ></i>
     
   </div>
-  <div style="display: flex; flex-direction: column;  align-items: center;" class="sla">
+  <div style="display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;" class="sla">
     <div>
 
     <?php
@@ -116,6 +121,41 @@
 
 
 <style>
+/* //div sla */
+@media (max-width: 1024px) {
+  .sla {
+    padding: 15px;
+  }
+  .sla > div {
+    width: 90%;
+  }
+}
+
+/* Para smartphones em modo paisagem */
+@media (max-width: 768px) {
+  .sla {
+    padding: 10px;
+  }
+  .sla > div {
+    width: 100%;
+  }
+}
+
+/* Para smartphones em modo retrato */
+@media (max-width: 480px) {
+  .sla {
+    padding: 5px;
+  }
+  .sla > div {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sla div:last-child {
+    margin-top: 20px;
+  }
+}
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{

@@ -39,16 +39,31 @@ $usuarios = $userController->GetAllUser();
                 </div>
                 <div style="width:100%; gap: 16px; padding: 20px;  display: flex; flex-direction:column; ">
                     <form method="POST" style="" >
-                        <label for="">Nome</label>
-                        <?php InputComponent("text", "Digite nome", "name_cliente") ?>
-                        <label for="">Email</label>
-                        <?php InputComponent("email", "Digite o email", "email_cliente") ?>
-                        <label for="">Telefone</label>
-                        <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number") ?>
-                        <label for="">Data da Reserva</label>
-                        <?php InputComponent("date", "", "calendar") ?>
-                    
-                        <?php ButtonComponent("fecharPopup()", "submit", "Confirmar"); ?>
+                        <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
+                            <label for="">Nome</label>
+                            <?php InputComponent("text", "Digite nome", "name_cliente") ?>
+                        </div>
+                        <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
+                            <label for="">Email</label>
+                            <?php InputComponent("email", "Digite o email", "email_cliente") ?>
+                        </div>
+                        <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
+                            <label for="">Telefone</label>
+                            <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number") ?>
+                        </div>
+                        <div style=" gap:6px; justify-content: space-between; align-items:center; display:flex; ">
+                            <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
+                                <label for="">Data da Reserva</label>
+                                <?php InputComponent("date", "", "calendar") ?>
+                            </div>
+                            <div style="width:50%; gap:6px;  display:flex; flex-direction: column;" >
+                                <label for="">Tipo</label>
+                                <?php include '../../components/select.php'?>
+                            </div>
+                        </div>
+                        <div style="width:100%; margin-top:16px;">
+                            <?php ButtonComponent("fecharPopup()", "submit", "Confirmar"); ?>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -76,7 +91,7 @@ $usuarios = $userController->GetAllUser();
     display: none;
     position: fixed;
     width: 33rem;
-    height: 35rem;
+    height: 34rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

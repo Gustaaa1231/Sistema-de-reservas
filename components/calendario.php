@@ -56,7 +56,7 @@
             width: 50px;
             height: 50px;
             border-radius: 8px;
-            background-color: #e9eff6;
+            background-color: #C6E2F9;
             color: #a0a0a0;
             font-size: 18px;
             text-align: center;
@@ -66,8 +66,8 @@
         }
 
         .current-month {
-            color: #333;
-            background-color: #f0f0f0;
+            color: #fff;
+            background-color:#80C3FA;
         }
     </style>
 </head>

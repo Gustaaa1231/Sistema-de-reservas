@@ -1,6 +1,6 @@
 <?php
 // Array de carros
-$carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "Mercedes", "Mini", "Nissan", "Toyota", "Volvo"];
+$carros = ["Tênis", "Vôlei", "Basquete", "Futsal"];
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +13,8 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 .custom-select {
   position: relative;
   font-family: "ABeeZee", serif;
+  border: 1px solid #CCCCCC;
+  border-radius:4px; 
 }
 
 .custom-select select {
@@ -20,8 +22,12 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 }
 
 .select-selected {
-  background-color: white;
-  border: 1px solid black;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Ajuste da borda */
+  border-radius: 4px; /* Cantos arredondados */
+  padding: 8px 16px; /* Espaçamento interno */
+  font-family: "ABeeZee", sans-serif; /* Fonte conforme especificada */
+  color: #fff; /* Cor do texto */
 }
 
 /* Estilo da seta dentro do elemento select: */
@@ -34,11 +40,12 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
   height: 0;
   border: 6px  solid  transparent;
   border-color: black transparent transparent transparent;
+  
 }
 
 /* Apontar a seta para cima quando a caixa select estiver aberta (ativa): */
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
+  border-color:  black transparent transparent transparent;
   top: 7px;
 }
 
@@ -46,8 +53,6 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 .select-items div, .select-selected {
   color: black;
   padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
 }
@@ -55,11 +60,13 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 /* Estilo dos itens (opções): */
 .select-items {
   position: absolute;
-  background-color: DodgerBlue;
+  background-color: #fff;
   top: 100%;
   left: 0;
   right: 0;
   z-index: 99;
+  border-radius:4px;
+  border: 1px solid #CCCCCC;
 }
 
 /* Esconder os itens quando a caixa select estiver fechada: */
@@ -68,19 +75,17 @@ $carros = ["Audi", "BMW", "Citroen", "Ford", "Honda", "Jaguar", "Land Rover", "M
 }
 
 .select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #E4F4FA;
 }
 </style>
 </head>     
 
 <body>
 
-<h2>Custom Select</h2>
-
 <!-- Envolva a caixa select com um elemento DIV com a classe "custom-select". Lembre-se de definir a largura: -->
-<div class="custom-select" style="width:200px;">
+<div class="custom-select" style="height:42px; width:200px;">
   <select>
-    <option value="0">Select car:</option>
+    <option value="0">Selecione</option>
     <?php
     // Gerar opções dinamicamente a partir do array de carros
     foreach ($carros as $index => $carro) {
