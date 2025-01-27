@@ -3,7 +3,7 @@
 include_once __DIR__ . "/../db/database.php";
 
 // Define a classe LoginController responsável pela autenticação de usuários
-class ReservaController
+class DataReservaController
 {
     private $conn; // Variável para armazenar a conexão com o banco de dados
 
@@ -16,15 +16,14 @@ class ReservaController
     }
 
     // Método responsável por realizar o login
-    public function Reservar($nome, $email, $telefone){
+    public function Reservar_data($datas){
         try {
 
            
-            $sql = "INSERT INTO clientes (nome,email,telefone) VALUES(:nome,:email,:telefone)";
+            $sql = "INSERT INTO reservas (data_reserva) VALUES(:datas)";
             $db = $this->conn->prepare($sql);
-            $db->bindParam(":nome", $nome);
-            $db->bindParam(":email", $email);
-            $db->bindParam(":telefone", $telefone);
+            
+            $db->bindParam(":datas", $datas);
     
             if($db->execute()){
                 return true;
@@ -32,7 +31,7 @@ class ReservaController
                 return false;
             }
         } catch (\Exception $th) {
-            //throw $th;
+            //throw $th; 
         }
     }
 }

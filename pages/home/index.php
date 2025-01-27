@@ -38,7 +38,7 @@ $usuarios = $userController->GetAllUser();
                     </div>
                 </div>
                 <div style="width:100%; gap: 16px; padding: 20px;  display: flex; flex-direction:column; ">
-                    <form method="POST" style="" >
+                    <form method="POST">
                         <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                             <label for="">Nome</label>
                             <?php InputComponent("text", "Digite nome", "name_cliente") ?>
