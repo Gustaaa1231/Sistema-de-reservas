@@ -9,7 +9,7 @@
 <body style="font-family: ABeeZee, serif;">
 
 
-    <div style="display:flex; flex-direction: column; padding: 22px; width: 445px; height: 100%; background-color:white; border-left: 1px solid #2779B8;">
+    <div style="display:flex; flex-direction: column; padding: 22px; width: 445px; height: 100%; background-color:white; border-left: 1px solid #2779B8; ">
         <div style=" display: flex; flex-direction:column; align-items: center; justify-content: center; width: 100%; ;">
             
             <div style="display:flex; align-items:center; justify-content:center; width: 160px; height: 160px;">
@@ -21,8 +21,13 @@
             </div>
             <div style="width:100%; margin-top: 30px;">
                 <?php
-                include "calendario.php"
+                include "calendario.php";
                 ?>
+                <div class="btn">
+                    <?php 
+                    ButtonComponent("mostrarPopup()", "button" , "Reservar")
+                    ?>
+                </div>
 
             </div>
         </div>
@@ -31,3 +36,10 @@
     
 </body>
 </html>
+<style>
+.btn{
+    width: 100%;    
+    margin-top: 1rem;
+}
+
+</style>

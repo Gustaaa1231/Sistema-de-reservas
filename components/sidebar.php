@@ -68,38 +68,45 @@
   </li>
 </ul>
 </div>
-<section class="home-section">
-  <div class="home-content">
-    <i style="color:#2779B8;" class='bx bx-menu' ></i>
-    
-  </div>
-  <div style="display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;" class="sla">
-    <div>
 
-    <?php
-      include "slider.php";
-      ?>
-    </div>
-    <div style="display:flex; justify-content:center; align-items:center;">
-      <?php
-      include "cards.php"
-     ?>
-    </div>
 
-  </div>
-<div>
-  <?php
-      include "sidebar2.php"
-      ?>
+
+  <section class="home-section">
+    <div class="home-content">
+      <i style="color:#2779B8;" class='bx bx-menu' ></i>
+    </section>
+      
     </div>
     
-  </section>
-  
+    <div style="display: flex; height: 100;">
+      <div style="display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto; justify-content: center; " class="sla">
+        <div>
+    
+        <?php
+          include "slider.php";
+          ?>
+        </div>
+        <div style="display:flex; justify-content:center; align-items:center;">
+          <?php
+          include "cards.php"
+         ?>
+        </div>
+        
+      </div>
+      <div>
+        <?php
+            include "sidebar2.php"
+            ?>
+      </div>
+    </div>
+      
+    
+
 </body>
 </html>
   
@@ -121,6 +128,10 @@
 
 
 <style>
+
+  body{
+    background-color: #E4E9F7;
+  }
 /* //div sla */
 @media (max-width: 1024px) {
   .sla {
@@ -371,7 +382,6 @@
 .home-section{
   display: flex;
   position: relative;
-  background: #E4E9F7;
   height: 100%;
   left: 260px;
   width: calc(100% - 360px);

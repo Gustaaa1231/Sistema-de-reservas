@@ -14,9 +14,6 @@ function description($description) {
             <p class="">Uma quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
-        <div class="botao">
-          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
-        </div>
     </div>
     <div class="caixaInicial">
         <div class="informacoes">
@@ -25,9 +22,6 @@ function description($description) {
             <h3 class="">Vôlei</h3>
             <p class="">Uma quadra de Vôlei é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
-        </div>
-        <div class="botao">
-          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
         </div>
     </div>
     <div class="caixaInicial">
@@ -38,9 +32,6 @@ function description($description) {
             <p class="">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
-        <div class="botao">
-          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
-        </div>
     </div>
     <div class="caixaInicial">
         <div class="informacoes">
@@ -49,9 +40,6 @@ function description($description) {
             <h3 class="">Futsal</h3>
             <p class="">Uma quadra de Futsal é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
-        </div>
-        <div class="botao">
-          <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
         </div>
     </div>
 </div>
@@ -169,10 +157,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 600px;
+  height: 490px;
   background-color: #fff;
   padding: 16px;
   border-radius: 10px;
+  flex-wrap: nowrap;
+  overflow: hidden; 
 }
 
 h3 {

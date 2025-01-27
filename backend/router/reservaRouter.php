@@ -1,4 +1,4 @@
-<?php include"../../pages/home/index.php";
+<?php
 require_once __DIR__ . "/../controller/ReservaController.php";
 $ReservaController = new ReservaController();
 
@@ -10,14 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $email = $_POST["email_cliente"];
             $telefone = $_POST["number"];
             $datas = $_POST["calendar"];
+            $idLocal = $_POST["local"];
 
+            $resposta = $ReservaController->Reservar($nome,$email, $telefone, $datas,$idLocal);
 
-            if(!(empty($nome) || empty($email) || empty($telefone) || empty($datas))) {
-        $resposta = $ReservaController->Reservar($nome,$email, $telefone, $datas);
-            if($resposta){
-                header("Location: ../../pages/home/index.php");
-                }
-            }
+            echo $resposta;
+
             break;
         default:
             echo "Não especificado";

@@ -16,23 +16,28 @@ class ReservaController
     }
 
     // Método responsável por realizar o login
-    public function Reservar($nome, $email, $telefone, $datas){
+    public function Reservar($nome, $email, $telefone, $datas,$idLocal){
         try {
 
-           
-            $sql = "INSERT INTO clientes (nome,email,telefone) VALUES(:nome,:email,:telefone)";
+            $sql = "INSERT INTO clientes (nome,telefone,email) VALUES(:nome,:telefone,:email)";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":nome", $nome);
             $db->bindParam(":email", $email);
             $db->bindParam(":telefone", $telefone);
-    
-            if($db->execute()){
-                return true;
-            }else{
-                return false;
-            }
+            
+            $db->execute();
+
+            $idCliente = $this->conn->lastInsertId();
+ 
+            $sql = "INSERT INTO reservas (id_cliente, id_local, data_reserva) VALUES(:id_cliente, :id_local, :data_reserva)";
+            $db = $this->conn->prepare($sql);
+            $db->bindParam(":id_cliente", $idCliente);
+            $db->bindParam(":id_local", $idLocal);
+            $db->bindParam(":data_reserva", $datas);
+            $db->execute();
+
         } catch (\Exception $th) {
-            //throw $th;
+            return $th->getMessage();
         }
     }
 }
