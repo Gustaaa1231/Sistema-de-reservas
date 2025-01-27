@@ -106,6 +106,14 @@
             text-align: center;
         }
 
+        .membro-equipe img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 20%;
+            margin-bottom: 10px;
+        }
+
         .linkedin-link {
             color: #2779B8;
             text-decoration: none;
@@ -151,7 +159,7 @@
         <h2>Nossa Equipe</h2>
         <div class="equipe-grid">
             <div class="membro-equipe">
-                <img src="" alt="">
+                <img src="../../image/IMG_20241215_162142_608.webp" alt="">
                 <h3>Luan</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
@@ -163,13 +171,13 @@
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
-                <img src="" alt="">
+                <img src="../../image/IMG_3844.jpeg" alt="">
                 <h3>Henrique</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
-                <img src="" alt="">
+                <img src="../../image/foto-de-perfil.jpg" alt="">
                 <h3>Bruna</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
