@@ -26,6 +26,10 @@ create table reservas(
 id int auto_increment primary key,
 id_cliente int,
 id_local int,
-data_reserva date
+data_reserva date,
+foreign key (id_cliente) references clientes(id),
+foreign key (id_local) references locais(id)
 );
 
+select * from clientes;
+select * from reservas;

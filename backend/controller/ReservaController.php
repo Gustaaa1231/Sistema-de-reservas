@@ -16,7 +16,7 @@ class ReservaController
     }
 
     // Método responsável por realizar o login
-    public function Reservar($nome, $email, $telefone){
+    public function Reservar($nome, $email, $telefone, $datas){
         try {
 
            

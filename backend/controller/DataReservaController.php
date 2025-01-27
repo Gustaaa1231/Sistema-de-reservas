@@ -20,7 +20,7 @@ class DataReservaController
         try {
 
            
-            $sql = "INSERT INTO reservas (data_reserva) VALUES(:datas)";
+            $sql = "INSERT INTO reservas VALUES(default, default, default,:datas)";
             $db = $this->conn->prepare($sql);
             
             $db->bindParam(":datas", $datas);
