@@ -11,7 +11,7 @@ function description($description) {
           <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
           <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
             <h3 class="">Tênis</h3>
-            <p class="">Umaa quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
+            <p class="">Uma quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
         <div class="botao">
@@ -212,14 +212,6 @@ p {
 }
 
 
-
-.box-top {
-  /* display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: space-between;
-  gap: 14px; */
-}
 .box-image {
   width: 100%;
   height: 280px;

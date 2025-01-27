@@ -116,6 +116,10 @@
         .linkedin-link:hover {
             color: #1e5b8a;
         }
+        img{
+            border-radius: 2rem;
+            width: 150px;
+        }
     </style>
 </head>
 <body>
@@ -147,21 +151,25 @@
         <h2>Nossa Equipe</h2>
         <div class="equipe-grid">
             <div class="membro-equipe">
+                <img src="" alt="">
                 <h3>Luan</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
+                <img src="../../image/FotoGusta.jpg" alt="none" >
                 <h3>Gustavo</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
+                <img src="" alt="">
                 <h3>Henrique</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
+                <img src="" alt="">
                 <h3>Bruna</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>
