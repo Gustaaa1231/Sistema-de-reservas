@@ -75,16 +75,14 @@
     <div class="home-content">
       <i style="color:#2779B8;" class='bx bx-menu' ></i>
     </section>
-      
-    </div>
-    
-    <div style="display: flex; height: 100;">
+    <div style="display: flex; height: 100vh;">
       <div style="display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
         max-width: 1200px;
-        margin: 0 auto; justify-content: center; " class="sla">
+        margin: 0 auto; 
+        justify-content: center; " class="sla">
         <div>
     
         <?php
@@ -98,12 +96,15 @@
         </div>
         
       </div>
-      <div>
+      <div style="height: 100%;">
         <?php
             include "sidebar2.php"
             ?>
       </div>
     </div>
+      
+    </div>
+    
       
     
 
@@ -381,10 +382,10 @@
 }
 .home-section{
   display: flex;
-  position: relative;
+  position: absolute;
   height: 100%;
   left: 260px;
-  width: calc(100% - 360px);
+  width: calc(100% - 260px);
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section{
