@@ -71,6 +71,40 @@ $usuarios = $userController->GetAllUser();
     </form>
 </body>
 </html>
+<script>
+document.getElementById("formReserva").addEventListener("submit", function(event) {
+  event.preventDefault(); // Impede o envio tradicional do formulário
+
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const telefone = document.getElementById("telefone").value;
+  const dataReserva = document.getElementById("dataReserva").value;
+  const local = document.getElementById("local").value;
+
+  // Envia os dados da reserva para o backend via POST
+  fetch('reservar.php?acao=reservar', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `name_cliente=${nome}&email_cliente=${email}&number=${telefone}&calendar=${dataReserva}&local=${local}`
+  })
+  .then(response => response.json())  // Espera pela resposta JSON
+  .then(data => {
+    if (data.status === "success") {
+      alert(data.message); // Exibe a mensagem de sucesso
+    } else {
+      alert(data.message); // Exibe a mensagem de erro
+    }
+  })
+  .catch(error => {
+    alert("Erro ao fazer a reserva!");
+    console.error(error);
+  });
+});
+
+    
+</script>
 
 
 <style>
@@ -156,38 +190,3 @@ function mostrarPopup() {
 
 </script>
 
-<!-- <div class="container">
-        <a href="../cadastrar/index.php" class="button">Cadastrar</a>
-        <h2>Lista de Usuários</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Senha</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-                foreach ($usuarios as $usuario) {
-                    ?>
-                    <tr>
-                        <td><?php echo $usuario['nome']; ?></td>
-                        <td><?php echo $usuario['senha']; ?></td>
-                        <td class="action-buttons">
-                            <a href="../cadastrar/index.php?id=<?php echo $usuario['id_usuario']; ?>" class="button">Editar</a>
-                            
-                            <form action="../../backend/router/userRouter.php?acao=deletar" method="POST">
-                                <input type="hidden" name="idUsuario" value="<?php echo $usuario['id_usuario']; ?>">
-                                <button type="submit" name="deletar" class="button deletar-button">Deletar</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php
-                }
-                ?>
-            </tbody>
-        </table>
-    </div> -->
-
-    

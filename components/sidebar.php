@@ -80,6 +80,7 @@
         flex-direction: column;
         align-items: center;
         padding: 20px;
+        
         max-width: 1200px;
         margin: 0 auto; 
         justify-content: center; " class="sla">
@@ -382,7 +383,7 @@
 }
 .home-section{
   display: flex;
-  position: absolute;
+  position: relative;
   height: 100%;
   left: 260px;
   width: calc(100% - 260px);
