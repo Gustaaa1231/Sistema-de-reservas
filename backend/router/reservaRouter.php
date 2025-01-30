@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             $resposta = $ReservaController->Reservar($nome,$email, $telefone, $datas,$idLocal);
 
-            echo $resposta;
+            header("Location: ../../pages/home/index.php");
 
             break;
         default:
