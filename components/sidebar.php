@@ -78,9 +78,10 @@
       <div style="display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; " class="sla">
+        justify-content: flex-start;
+        width: 100%; " class="sla">
   
-        <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center; ">
           <?php
             include "slider.php";
             ?>

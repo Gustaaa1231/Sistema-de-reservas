@@ -44,58 +44,6 @@ function description($description) {
     </div>
 </div>
 
-<!-- <div class="wrap">
-  <div class="box">
-    <div class="box-top">
-      <div>
-        <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
-        <div class="title-flex">
-          <h3 class="box-title">Tênis</h3>
-          <p class="description">A quadra de tênis é uma área retangular cruzada ao meio por uma rede baixa.
-           Ela pode ser preparada e marcada para jogos de simples ou duplas.</p>
-        </div>
-      </div>
-      <div>
-        <?php ButtonComponent("mostrarPopup()", "button" , "Reservar")?>
-
-      </div>
-      </div>
-  </div>
-  <div class="box">
-    <div class="box-top">
-      <img class="box-image" src="../../image/volei.jpg" alt="Girl Eating Pizza">
-      <div class="title-flex">
-        <h3 class="box-title">Vôlei</h3>
-      </div>
-      <p class="description">A quadra de vôlei é retangular e está dividida por uma rede.
-      Ela representa a área do jogo, que é disputado entre duas equipes composta por 6 jogadores cada.</p>
-      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
-    </div>
-  </div>
-  <div class="box">
-    <div class="box-top">
-      <div>
-        <img class="box-image" src="../../image/futsal.jpg" alt="Girl Eating Pizza">
-      </div>
-      <div class="title-flex">
-        <h3 class="box-title">Futsal</h3>
-        <p class="description">Uma quadra de futsal é um espaço esportivo de dimensões reduzidas, geralmente coberto, com piso liso para a prática do futsal.</p>
-      </div>
-      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
-    </div>
-  </div>
-  <div class="box">
-    <div class="box-top">
-      <img class="box-image" src="../../image/basquete.jpg" alt="Girl Eating Pizza">
-      <div class="title-flex">
-        <h3 class="box-title">Basquete</h3>
-      </div>
-      <p class="descriptiimgbotaoon">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos, lance livre e meio-campo.</p>
-    </div>
-      <?php ButtonComponent("mostrarPopup()", "button", "Reservar")?>
-  </div>
-</div> -->
-
 <style>
 * {
   box-sizing: border-box;
@@ -163,6 +111,9 @@ body {
   border-radius: 10px;
   flex-wrap: nowrap;
   overflow: hidden; 
+  -webkit-box-shadow: -1px 19px 29px -16px rgba(66, 68, 90, 1);
+-moz-box-shadow: -1px 19px 29px -16px rgba(66, 68, 90, 1);
+box-shadow: -1px 19px 29px -16px rgba(66, 68, 90, 1);
 }
 
 h3 {
