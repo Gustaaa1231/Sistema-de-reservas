@@ -177,7 +177,7 @@
                 <a href="#" class="linkedin-link">LinkedIn</a>
             </div>
             <div class="membro-equipe">
-                <img src="../../image/foto-de-perfil.jpg" alt="">
+                <img src="../../image/bruninha.jpg" alt="">
                 <h3>Bruna</h3>
                 <p>Gestor de Projetos</p>
                 <a href="#" class="linkedin-link">LinkedIn</a>

@@ -74,35 +74,31 @@
   <section class="home-section">
     <div class="home-content">
       <i style="color:#2779B8;" class='bx bx-menu' ></i>
-    </section>
-    <div style="display: flex; height: 100vh;">
+    </div>  
       <div style="display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
-        
-        max-width: 1200px;
-        margin: 0 auto; 
-        justify-content: center; " class="sla">
-        <div>
-    
-        <?php
-          include "slider.php";
-          ?>
+        justify-content: flex-start; " class="sla">
+  
+        <div style="display: flex; align-items: center;">
+          <?php
+            include "slider.php";
+            ?>
         </div>
-        <div style="display:flex; justify-content:center; align-items:center;">
+        <div style="display:flex; padding-left: 10px; padding-right: 10px; justify-content:center; align-items:center;">
           <?php
           include "cards.php"
-         ?>
+          ?>
         </div>
-        
       </div>
-      <div style="height: 100%;">
-        <?php
-            include "sidebar2.php"
-            ?>
+      <div style="display: flex; height: 100%;">
+        <div style="height: 100%;">
+          <?php
+              include "sidebar2.php"
+              ?>
+        </div>
       </div>
-    </div>
+  </section>
       
     </div>
     
@@ -394,9 +390,10 @@
   width: calc(100% - 78px);
 }
 .home-section .home-content{
-  height: 2rem;
+  height: 0.1px;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{

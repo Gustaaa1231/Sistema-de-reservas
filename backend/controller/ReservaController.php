@@ -40,4 +40,17 @@ class ReservaController
             return $th->getMessage();
         }
     }
+
+    public function getReservas($mes, $ano) {
+        try {
+            $sql = "SELECT data_reserva FROM reservas WHERE MONTH(data_reserva) = :mes AND YEAR(data_reserva) = :ano";
+            $db = $this->conn->prepare($sql);
+            $db->bindParam(":mes", $mes);
+            $db->bindParam(":ano", $ano);
+            $db->execute();
+            return $db->fetchAll(PDO::FETCH_COLUMN);
+        } catch (\Exception $th) {
+            return [];
+        }
+    }
 }

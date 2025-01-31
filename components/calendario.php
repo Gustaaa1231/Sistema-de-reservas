@@ -64,6 +64,7 @@
 </head>
 <body>
     <?php
+        include '../../backend/controller/ReservaController.php';
         // Configurações iniciais
         $mesAtual = isset($_POST['mesAtual']) ? (int)$_POST['mesAtual'] : 0;
         $anoAtual = 2025;
@@ -76,6 +77,10 @@
         // Obter o total de dias do mês
         $diasNoMes = cal_days_in_month(CAL_GREGORIAN, $mesAtual + 1, $anoAtual);
         $primeiroDia = date('w', strtotime("$anoAtual-" . ($mesAtual + 1) . "-01"));
+
+        // Obter as reservas do banco de dados
+        $reservaController = new ReservaController();
+        $reservas = $reservaController->getReservas($mesAtual + 1, $anoAtual);
     ?>
 
     <div class="calendar">
@@ -93,10 +98,19 @@
 
                 // Renderizar os dias do mês
                 for ($dia = 1; $dia <= $diasNoMes; $dia++) {
-                    echo '<div class="day current-month">' . $dia . '</div>';
+                    $dataAtual = "$anoAtual-" . str_pad($mesAtual + 1, 2, '0', STR_PAD_LEFT) . "-" . str_pad($dia, 2, '0', STR_PAD_LEFT);
+                    $classe = in_array($dataAtual, $reservas) ? 'reserved-day' : 'current-month';
+                    echo '<div class="day ' . $classe . '">' . $dia . '</div>';
                 }
             ?>
         </div>
     </div>
 </body>
 </html>
+
+<style>
+    .reserved-day {
+        background-color: #2779B8; /* Cor de fundo para dias reservados */
+        color: #fff;
+    }
+</style>
