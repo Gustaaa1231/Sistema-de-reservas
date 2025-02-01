@@ -35,7 +35,7 @@
         <i class='bx bxs-chevron-down arrow' ></i>
       </div>
       <ul class="sub-menu">
-        <li><a class="link_name" href="#">Reservas</a></li>
+        <li><a class="link_name" href="../../pages/reserva/index.php">Reservas</a></li>
           <li><a href="#">Minhas Reservas</a></li>
         </ul>
       </li>
