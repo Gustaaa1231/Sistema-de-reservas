@@ -10,8 +10,8 @@ function description($description) {
         <div class="informacoes">
           <img class="box-image" src="../../image/tenis.jpg" alt="Tênis">
           <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
-            <h3 class="">Tênis</h3>
-            <p class="">Uma quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
+            <h3 style="font-family: ABeeZee, serif;" class="">Tênis</h3>
+            <p style="font-family: ABeeZee, serif;" class="">Uma quadra de Tênis é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
     </div>
@@ -19,8 +19,8 @@ function description($description) {
         <div class="informacoes">
           <img class="box-image" src="../../image/volei.jpg" alt="Tênis">
           <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
-            <h3 class="">Vôlei</h3>
-            <p class="">Uma quadra de Vôlei é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
+            <h3 style="font-family: ABeeZee, serif;" class="">Vôlei</h3>
+            <p style="font-family: ABeeZee, serif;" class="">Uma quadra de Vôlei é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
     </div>
@@ -28,8 +28,8 @@ function description($description) {
         <div class="informacoes">
           <img class="box-image" src="../../image/basquete.jpg" alt="Tênis">
           <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
-            <h3 class="">Basquete</h3>
-            <p class="">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
+            <h3 style="font-family: ABeeZee, serif;" class="">Basquete</h3>
+            <p style="font-family: ABeeZee, serif;" class="">Uma quadra de basquete é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
     </div>
@@ -37,8 +37,8 @@ function description($description) {
         <div class="informacoes">
           <img class="box-image" src="../../image/futsal.jpg" alt="Tênis">
           <div style="display: flex; margin-top: 8px; flex-direction: column; gap: 8px;">
-            <h3 class="">Futsal</h3>
-            <p class="">Uma quadra de Futsal é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
+            <h3 style="font-family: ABeeZee, serif;" class="">Futsal</h3>
+            <p style="font-family: ABeeZee, serif;" class="">Uma quadra de Futsal é um espaço retangular com piso liso, demarcado por linhas específicas como a de três pontos.</p>
           </div>
         </div>
     </div>

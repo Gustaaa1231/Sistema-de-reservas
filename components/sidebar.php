@@ -81,7 +81,7 @@
         justify-content: flex-start;
         width: 100%; " class="sla">
   
-        <div style="display: flex; align-items: center; ">
+        <div class="dentro" style="display: flex; align-items: center; ">
           <?php
             include "slider.php";
             ?>
@@ -154,7 +154,11 @@
 /* Para smartphones em modo retrato */
 @media (max-width: 480px) {
   .sla {
-    padding: 5px;
+    padding: 20px;
+  }
+
+  .dentro{
+    padding: 20px;
   }
   .sla > div {
     flex-direction: column;

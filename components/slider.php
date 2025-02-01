@@ -27,6 +27,8 @@
     </div>
 
 <style>
+
+  
   *{
   margin: 0;
   padding: 0;
@@ -107,6 +109,32 @@
 input[type="radio"]{
   display: none;
 }
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .wrapper {
+      width: 100%;
+      height: auto;
+    }
+
+    .wrapper .img img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  /* Responsividade para smartphones */
+  @media (max-width: 480px) {
+    .wrapper {
+      width: 100%;
+      height: auto;
+    }
+
+    .wrapper .img img {
+      height: auto;
+      width: 100%;
+    }
+  }
 
 
 </style>

@@ -9,11 +9,11 @@
 <body style="font-family: ABeeZee, serif;">
 
 
-    <div style="display:flex; flex-direction: column; padding: 22px; width: 445px; height: 100%; background-color:white; border-left: 1px solid #2779B8; ">
+    <div class="tudo" style="display:flex; flex-direction: column; padding: 22px; width: 445px; height: 100%; background-color:white; border-left: 1px solid #2779B8; ">
         <div style=" display: flex; flex-direction:column; align-items: center; justify-content: center; height: 100%; width: 100%; ">
             
             <div style="display:flex; align-items:center; justify-content:center; width: 160px; height: 160px;">
-                <img style="height: 160px; width:160px; border-radius: 50%;" src="../../image/foto-de-perfil.jpg" alt="">
+                <img style="height: 160px; width:160px; border-radius: 50%;" src="../../image/perfill.png" alt="">
         
             </div>
             <div style="border-bottom: 1px solid #2779B8; width:100%; display:flex; align-items: center; justify-content:center; margin-top: 6px; padding-bottom: 8px;">
@@ -77,6 +77,19 @@
 .btn{
     width: 100%;    
     margin-top: 1rem;
+}
+
+@media (max-width: 480px){
+
+.tudo{
+display: flex;
+justify-content: space-between;
+gap: 16px;
+padding: 10px;
+flex-wrap: wrap;
+
+
+}
 }
 
 </style>
