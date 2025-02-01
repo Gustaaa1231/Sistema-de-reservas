@@ -86,4 +86,15 @@ class UserController
             //throw $th;
         }
     }
+    public function GetAllClientes(){
+        try {
+            $sql = "SELECT * FROM clientes";
+            $db = $this->conn->prepare($sql);
+            $db->execute();
+            $user = $db->fetchAll(PDO::FETCH_ASSOC);
+            return $user;
+        } catch (\Exception $th) {
+            return $th->getMessage();
+        }
+    }
 }

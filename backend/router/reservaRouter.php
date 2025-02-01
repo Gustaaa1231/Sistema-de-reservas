@@ -2,25 +2,38 @@
 require_once __DIR__ . "/../controller/ReservaController.php";
 $ReservaController = new ReservaController();
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     switch ($_GET["acao"]) {
-        case 'reservar':
+        case 'client_register':
             $nome = $_POST["name_cliente"];
             $email = $_POST["email_cliente"];
             $telefone = $_POST["number"];
-            $datas = $_POST["calendar"];
-            $idLocal = $_POST["local"];
 
-            $resposta = $ReservaController->Reservar($nome,$email, $telefone, $datas,$idLocal);
+            $resposta = $ReservaController->Cadastro_user($nome, $email, $telefone);
 
             header("Location: ../../pages/home/index.php");
-
             break;
+
+        case 'reservar':
+            $idCliente = $_POST["id_cliente"];
+            $dataReserva = $_POST["calendar"];
+
+            // Verifica se o cliente já tem uma reserva
+            $reservaExistente = $ReservaController->VerificarReserva($idCliente);
+
+            if ($reservaExistente) {
+                // Atualiza a reserva existente
+                $resposta = $ReservaController->AtualizarReserva($idCliente, $dataReserva);
+            } else {
+                // Insere uma nova reserva
+                $resposta = $ReservaController->InserirReserva($idCliente, $dataReserva);
+            }
+
+            header("Location: ../../pages/Reserva/index.php");
+            break;
+
         default:
-            echo "Não especificado";
+            echo "Ação não especificada";
             break;
-            
-
-};
+    }
 }
