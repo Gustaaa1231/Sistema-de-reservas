@@ -36,7 +36,7 @@
       </div>
       <ul class="sub-menu">
         <li><a class="link_name" href="#">Reservas</a></li>
-          <li><a onclick="mostrarPopup()">Criar Reservas</a></li>
+          <li><a onclick="mostrarPopupReserva()">Criar Reservas</a></li>
           <li><a href="../../pages/reserva/index.php">Minhas Reservas</a></li>
         </ul>
       </li>
@@ -105,10 +105,10 @@
     </div>
 
     <form action="../../backend/router/reservaRouter.php?acao=reservar" method="POST">
-        <div class="popup-overlay" id="popupOverlay"></div>
-        <div class="popup" id="popup">
+        <div class="popup-overlayReserva" id="popupReservaOverlay"></div>
+        <div class="popupReserva" id="popupReserva">
             <div style="width:100%; display:flex; justify-content: flex-end;">
-                <div id="exit-btn" onclick="fecharPopup()">
+                <div id="exit-Reserva-btn" onclick="fecharPopupReserva()">
                     <img id="exit" src="../../image/exit.svg" alt="Fechar popup svg">
                 </div>
             </div>
@@ -155,11 +155,7 @@
     width: 28rem;
     height: 40%;
 }
-.popupimage{
-    width: 400px;
-    height: 200px;
-}
-.popup {
+.popupReserva {
     display: none;
     position: fixed;
     width: 29rem;
@@ -191,11 +187,12 @@
 a{
   cursor: pointer;
 }
-#exit-btn{
+#exit-Reserva-btn{
     width: 12px;
     height: 12px; 
+    cursor: pointer;
 }
-.popup-btn{
+.popup-Reserva-btn{
     width: 100%;
     height: 50px;
 }
@@ -203,7 +200,7 @@ a{
     margin-bottom: 0;
 }
 
-.popup-overlay {
+.popup-overlayReserva {
     display: flex;
     display: none;
     position: fixed;
@@ -215,20 +212,16 @@ a{
     z-index: 999;
 }
 </style><script>
-function mostrarPopup() {
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('popupOverlay').style.display = 'block';
+function mostrarPopupReserva() {
+    document.getElementById('popupReserva').style.display = 'block';
+    document.getElementById('popupReservaOverlay').style.display = 'block';
 }
 
-function fecharPopup() {
-    document.getElementById('popup').style.display = 'none';
-    document.getElementById('popupOverlay').style.display = 'none';
+function fecharPopupReserva() {
+    document.getElementById('popupReserva').style.display = 'none';
+    document.getElementById('popupReservaOverlay').style.display = 'none';
 }
-</script>
 
-
-  
-  <script>
     let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e)=>{

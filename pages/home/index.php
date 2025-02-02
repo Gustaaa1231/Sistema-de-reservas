@@ -48,10 +48,6 @@ $usuarios = $userController->GetAllClientes();
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="number">Telefone</label>
-                        <?php include "../../components/selectUsuario.php"?>
-                    </div>
-                    <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
-                        <label for="number">Telefone</label>
                         <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number", "") ?>
                     </div>
                     <div style="width:100%; margin-top:16px;">
