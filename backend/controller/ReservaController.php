@@ -24,7 +24,9 @@ class ReservaController
             $db->bindParam(":email", $email);
             $db->bindParam(":telefone", $telefone);
             $db->execute();
+            return "Cliente cadastrado com sucesso!";
         } catch (\Exception $th) {
+            error_log("Erro ao cadastrar cliente: " . $th->getMessage());
             return $th->getMessage();
         }
     }
@@ -89,6 +91,18 @@ class ReservaController
             $db->execute();
             return $db->fetchAll(PDO::FETCH_COLUMN);
         } catch (\Exception $th) {
+            return [];
+        }
+    }
+    //Método para buscar os nomes dos clientes
+    public function getClientes() {
+        try {
+            $sql = "SELECT id, nome FROM clientes";
+            $db = $this->conn->prepare($sql);
+            $db->execute();
+            return $db->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Exception $th) {
+            error_log("Erro ao buscar clientes: " . $th->getMessage());
             return [];
         }
     }

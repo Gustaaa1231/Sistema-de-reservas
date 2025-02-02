@@ -63,7 +63,7 @@
                     </div>
                 <div class="btn">
                     <?php 
-                    ButtonComponent("mostrarPopup()", "button" , "Reservar")
+                    ButtonComponent("mostrarPopup()", "button" , "Cadastrar")
                     ?>
                 </div>
                 </div>

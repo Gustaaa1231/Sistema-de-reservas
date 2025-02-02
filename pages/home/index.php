@@ -26,7 +26,7 @@ $usuarios = $userController->GetAllClientes();
     <form action="../../backend/router/reservaRouter.php?acao=client_register" method="POST">
         <div class="popup-overlay" id="popupOverlay"></div>
         <div class="popup" id="popup">
-            <div style="width:100%; display:flex; justify-content: flex-end; margin-bottom: 10px;">
+            <div style="width:100%; display:flex; justify-content: flex-end;">
                 <div id="exit-btn" onclick="fecharPopup()">
                     <img id="exit" src="../../image/exit.svg" alt="Fechar popup svg">
                 </div>
@@ -45,6 +45,10 @@ $usuarios = $userController->GetAllClientes();
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="email_cliente">Email</label>
                         <?php InputComponent("email", "Digite o email", "email_cliente", "") ?>
+                    </div>
+                    <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
+                        <label for="number">Telefone</label>
+                        <?php include "../../components/selectUsuario.php"?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="number">Telefone</label>
@@ -77,8 +81,8 @@ $usuarios = $userController->GetAllClientes();
 .popup {
     display: none;
     position: fixed;
-    width: 33rem;
-    height: 34rem;
+    width: 29rem;
+    height: 27rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

@@ -48,7 +48,7 @@ $usuarios = $userController->GetAllClientes();
                         <td><?php echo $usuario['email']; ?></td>
                         <td><?php echo $usuario['telefone']; ?></td>
                         <td><?php InputComponent("date", "", "calendar", $dataReserva); ?></td>
-                        <td><?php include "../../components/select.php" ?></td>
+                        <td><?php include "../../components/selectUsuario.php" ?></td>
                         <td><?php ButtonComponent("", "submit", "Reservar"); ?></td>
                     </form>
                 </tr>

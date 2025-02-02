@@ -11,8 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $resposta = $ReservaController->Cadastro_user($nome, $email, $telefone);
 
+            if ($resposta !== "Cliente cadastrado com sucesso!") {
+                echo "Erro: " . $resposta;
+                exit;
+            }
+
             header("Location: ../../pages/home/index.php");
             break;
+
 
         case 'reservar':
             $idCliente = $_POST["id_cliente"];
