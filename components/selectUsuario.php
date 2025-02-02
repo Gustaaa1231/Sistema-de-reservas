@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../controller/ReservaController.php";
+require_once __DIR__ . "/../backend/controller/ReservaController.php";
 $ReservaController = new ReservaController();
 $clientes = $ReservaController->getClientes();
 ?>

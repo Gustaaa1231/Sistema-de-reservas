@@ -36,7 +36,7 @@
       </div>
       <ul class="sub-menu">
         <li><a class="link_name" href="#">Reservas</a></li>
-          <li><a onclick="mostrarPopup()"  >Criar Reservas</a></li>
+          <li><a onclick="mostrarPopup()">Criar Reservas</a></li>
           <li><a href="../../pages/reserva/index.php">Minhas Reservas</a></li>
         </ul>
       </li>
@@ -121,7 +121,7 @@
                 <div style="width:100%; gap: 16px; padding: 20px;  display: flex; flex-direction:column; ">
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="name_cliente">Usuário</label>
-                        <?php include "../../../components/selectUsuario.php" ?>
+                        <?php include "selectUsuario.php" ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="email_cliente">Email</label>
@@ -188,11 +188,12 @@
     width: 100%;
     
 }
+a{
+  cursor: pointer;
+}
 #exit-btn{
     width: 12px;
-    height: 12px;
-    
-    cursor: pointer;
+    height: 12px; 
 }
 .popup-btn{
     width: 100%;

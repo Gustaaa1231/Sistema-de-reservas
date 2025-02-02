@@ -11,12 +11,6 @@
 <body>
   
   </html>
-  <select style="font-family: ABeeZee, serif; height: 42px; border-radius: 4px; border: 1px solid #CCCCCC" name="local">
-    <option value="1">Tênis</option>
-    <option value="2">Võlei</option>
-    <option value="3">Basquete</option>
-    <option value="4">Futsal</option>
-  </select>
   
 </body>
 <style>
@@ -29,3 +23,19 @@ option{
 
 
 </style>
+<?php
+function SelectComponent($name, $selectedValue = '') {
+    $options = [
+        1 => 'Tenis',
+        2 => 'Volei',
+        3 => 'Basquete',
+        4 => 'Futsal'
+    ];
+
+    echo "<select name='$name'>";
+    foreach ($options as $value => $label) {
+        $selected = $value == $selectedValue ? 'selected' : '';
+        echo "<option value='$value' $selected>$label</option>";
+    }
+    echo "</select>";
+}

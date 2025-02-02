@@ -60,10 +60,11 @@ class ReservaController
     // Método responsável por atualizar uma reserva existente
     public function AtualizarReserva($idCliente, $dataReserva){
         try {
-            $sql = "UPDATE reservas SET data_reserva = :data_reserva WHERE id_cliente = :id_cliente";
+            $sql = "UPDATE reservas SET data_reserva = :data_reserva, id_local = :id_local WHERE id_cliente = :id_cliente";
             $db = $this->conn->prepare($sql);
             $db->bindParam(":id_cliente", $idCliente);
             $db->bindParam(":data_reserva", $dataReserva);
+            $db->bindParam(":id_local", $idLocal);
             $db->execute();
         } catch (\Exception $th) {
             return $th->getMessage();
@@ -104,6 +105,16 @@ class ReservaController
         } catch (\Exception $th) {
             error_log("Erro ao buscar clientes: " . $th->getMessage());
             return [];
+        }
+    }
+    public function DeletarReserva($idCliente){
+        try {
+            $sql = "DELETE FROM reservas WHERE id_cliente = :id_cliente";
+            $db = $this->conn->prepare($sql);
+            $db->bindParam(":id_cliente", $idCliente);
+            $db->execute();
+        } catch (\Exception $th) {
+            return $th->getMessage();
         }
     }
 }

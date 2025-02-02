@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         case 'reservar':
             $idCliente = $_POST["id_cliente"];
             $dataReserva = $_POST["calendar"];
+            $idLocal = $_POST["local"];
 
             // Verifica se o cliente já tem uma reserva
             $reservaExistente = $ReservaController->VerificarReserva($idCliente);
@@ -34,6 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Insere uma nova reserva
                 $resposta = $ReservaController->InserirReserva($idCliente, $dataReserva);
             }
+
+            header("Location: ../../pages/Reserva/index.php");
+            break;
+        case 'deletar':
+            $idCliente = $_POST["id_cliente"];
+            $resposta = $ReservaController->DeletarReserva($idCliente);
 
             header("Location: ../../pages/Reserva/index.php");
             break;
