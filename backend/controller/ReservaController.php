@@ -32,15 +32,20 @@ class ReservaController
     }
 
     // Método responsável por inserir uma reserva
-    public function InserirReserva($idCliente, $dataReserva){
+    public function inserirReserva($clienteId, $dataReserva, $localId) {
         try {
-            $sql = "INSERT INTO reservas (id_cliente, data_reserva) VALUES(:id_cliente, :data_reserva)";
-            $db = $this->conn->prepare($sql);
-            $db->bindParam(":id_cliente", $idCliente);
-            $db->bindParam(":data_reserva", $dataReserva);
-            $db->execute();
-        } catch (\Exception $th) {
-            return $th->getMessage();
+            $query = "INSERT INTO reservas (id_cliente, id_local, data_reserva ) 
+                      VALUES (:clienteId, :localId, :dataReserva)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':clienteId', $clienteId, PDO::PARAM_INT);
+            $stmt->bindParam(':localId', $localId, PDO::PARAM_INT);
+            $stmt->bindParam(':dataReserva', $dataReserva);
+            $stmt->execute();
+
+            return $this->conn->lastInsertId();
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
+            return null;
         }
     }
 

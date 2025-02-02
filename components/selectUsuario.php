@@ -3,7 +3,7 @@ require_once __DIR__ . "/../backend/controller/ReservaController.php";
 $ReservaController = new ReservaController();
 $clientes = $ReservaController->getClientes();
 ?>
-<select style="font-family: ABeeZee, serif; height: 42px; border-radius: 4px; border: 1px solid #CCCCCC" name="cliente">
+<select style="font-family: ABeeZee, serif; padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #CCCCCC" name="cliente">
   <?php foreach ($clientes as $cliente): ?>
     <option value="<?= $cliente['id']; ?>"><?= $cliente['nome']; ?></option>
   <?php endforeach; ?>

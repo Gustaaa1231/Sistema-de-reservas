@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +15,8 @@
 <style>
 option{
   background-color: white;
-  color: black;
-  font-family: "ABeeZee", serif;
+    color: black;
+    font-family: "ABeeZee", serif;
 }
 
 
@@ -32,10 +31,14 @@ function SelectComponent($name, $selectedValue = '') {
         4 => 'Futsal'
     ];
 
-    echo "<select name='$name'>";
+    echo "<select style='font-family: ABeeZee, serif; width:100%; padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #CCCCCC' name='$name'>";
     foreach ($options as $value => $label) {
         $selected = $value == $selectedValue ? 'selected' : '';
-        echo "<option value='$value' $selected>$label</option>";
+        echo "<option style='background-color: white; color: black; font-family: ABeeZee, serif;' value='$value' $selected>$label</option>";
     }
     echo "</select>";
+}
+
+function renderSelect($name, $selectedValue = '') {
+    SelectComponent($name, $selectedValue);
 }

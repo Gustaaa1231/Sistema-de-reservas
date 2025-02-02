@@ -1,3 +1,9 @@
+<?php
+
+require "select.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,12 +130,12 @@
                         <?php include "selectUsuario.php" ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
-                        <label for="email_cliente">Email</label>
-                        <?php InputComponent("email", "Digite o email", "email_cliente", "") ?>
+                        <label for="data_reserva">Data Reserva</label>
+                        <?php InputComponent("date", "", "calendar", "") ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
-                        <label for="number">Telefone</label>
-                        <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number", "") ?>
+                        <label for="esporte">Esporte</label>
+                        <?php SelectComponent("local", ""); ?>
                     </div>
                     <div style="width:100%; margin-top:16px;">
                         <?php ButtonComponent("fecharPopup()", "submit", "Reservar"); ?>
