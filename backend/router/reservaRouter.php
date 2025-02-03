@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $resposta = $ReservaController->InserirReserva($idCliente, $dataReserva, $idLocal);
             }
 
-            header("Location: ../../pages/Reserva/index.php");
+            header("Location: ../../pages/home/index.php");
             break;
 
         case 'deletar':
