@@ -11,14 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $resposta = $ReservaController->Cadastro_user($nome, $email, $telefone);
 
-            if ($resposta !== "Cliente cadastrado com sucesso!") {
-                echo "Erro: " . $resposta;
-                exit;
-            }
-
             header("Location: ../../pages/home/index.php");
             break;
-
 
         case 'reservar':
             $idCliente = $_POST["id_cliente"];
@@ -30,14 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($reservaExistente) {
                 // Atualiza a reserva existente
-                $resposta = $ReservaController->AtualizarReserva($idCliente, $dataReserva);
+                $resposta = $ReservaController->AtualizarReserva($idCliente, $dataReserva, $idLocal);
             } else {
                 // Insere uma nova reserva
-                $resposta = $ReservaController->InserirReserva($idCliente, $dataReserva);
+                $resposta = $ReservaController->InserirReserva($idCliente, $dataReserva, $idLocal);
             }
 
             header("Location: ../../pages/Reserva/index.php");
             break;
+
         case 'deletar':
             $idCliente = $_POST["id_cliente"];
             $resposta = $ReservaController->DeletarReserva($idCliente);

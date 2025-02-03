@@ -63,7 +63,7 @@ class ReservaController
     }
 
     // Método responsável por atualizar uma reserva existente
-    public function AtualizarReserva($idCliente, $dataReserva){
+    public function AtualizarReserva($idCliente, $dataReserva, $idLocal){
         try {
             $sql = "UPDATE reservas SET data_reserva = :data_reserva, id_local = :id_local WHERE id_cliente = :id_cliente";
             $db = $this->conn->prepare($sql);
@@ -122,4 +122,5 @@ class ReservaController
             return $th->getMessage();
         }
     }
+    
 }
