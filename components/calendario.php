@@ -90,27 +90,62 @@
         </form>
         <h2 style="font-family: ABeeZee, serif;"><?= $meses[$mesAtual] . " " . $anoAtual; ?></h2>
         <div class="days">
-            <?php
-                // Adicionar espaços vazios antes do primeiro dia do mês
-                for ($i = 0; $i < $primeiroDia; $i++) {
-                    echo '<div class="day"></div>';
-                }
+        <?php
+            // Adicionar espaços vazios antes do primeiro dia do mês
+            for ($i = 0; $i < $primeiroDia; $i++) {
+                echo '<div class="day"></div>';
+            }
 
-                // Renderizar os dias do mês
-                for ($dia = 1; $dia <= $diasNoMes; $dia++) {
-                    $dataAtual = "$anoAtual-" . str_pad($mesAtual + 1, 2, '0', STR_PAD_LEFT) . "-" . str_pad($dia, 2, '0', STR_PAD_LEFT);
-                    $classe = in_array($dataAtual, $reservas) ? 'reserved-day' : 'current-month';
-                    echo '<div class="day ' . $classe . '">' . $dia . '</div>';
+            // Renderizar os dias do mês
+            for ($dia = 1; $dia <= $diasNoMes; $dia++) {
+                $dataAtual = "$anoAtual-" . str_pad($mesAtual + 1, 2, '0', STR_PAD_LEFT) . "-" . str_pad($dia, 2, '0', STR_PAD_LEFT);
+                $classe = 'current-month';
+                
+                if (isset($reservas[$dataAtual])) {
+                    switch ($reservas[$dataAtual]) {
+                        case 'tenis':
+                            $classe = 'reserved-tenis';
+                            break;
+                        case 'volei':
+                            $classe = 'reserved-volei';
+                            break;
+                        case 'basquete':
+                            $classe = 'reserved-basquete';
+                            break;
+                        case 'futsal':
+                            $classe = 'reserved-futsal';
+                            break;
+                    }
                 }
-            ?>
+                
+                echo '<div class="day ' . $classe . '">' . $dia . '</div>';
+            }
+        ?>
         </div>
     </div>
 </body>
 </html>
 
 <style>
-    .reserved-day {
+    .reserved-tenis {
+        background-color: #4100FF; /* Cor de fundo para reservas de tênis */
+        color: #fff;
+    }
+    .reserved-volei {
+        background-color: #E0087F; /* Cor de fundo para reservas de vôlei */
+        color: #fff;
+    }
+    .reserved-basquete {
+        background-color: #FFA800; /* Cor de fundo para reservas de basquete */
+        color: #fff;
+    }
+    .reserved-futsal {
+        background-color: #006C10; /* Cor de fundo para reservas de futsal */
+        color: #fff;
+    }
+    .current-month {
         background-color: #2779B8; /* Cor de fundo para dias reservados */
         color: #fff;
+        /* Estilo para os dias do mês atual que não têm reservas */
     }
 </style>

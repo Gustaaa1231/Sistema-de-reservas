@@ -90,13 +90,21 @@ class ReservaController
     }
     public function getReservas($mes, $ano) {
         try {
-            $sql = "SELECT data_reserva FROM reservas WHERE MONTH(data_reserva) = :mes AND YEAR(data_reserva) = :ano";
-            $db = $this->conn->prepare($sql);
-            $db->bindParam(":mes", $mes);
-            $db->bindParam(":ano", $ano);
-            $db->execute();
-            return $db->fetchAll(PDO::FETCH_COLUMN);
-        } catch (\Exception $th) {
+            $query = "SELECT data_reserva, id_local FROM reservas WHERE MONTH(data_reserva) = :mes AND YEAR(data_reserva) = :ano";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':mes', $mes, PDO::PARAM_INT);
+            $stmt->bindParam(':ano', $ano, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $reservas = [];
+            foreach ($result as $row) {
+                $reservas[$row['data_reserva']] = $row['tipo_reserva'];
+            }
+
+            return $reservas;
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
             return [];
         }
     }
