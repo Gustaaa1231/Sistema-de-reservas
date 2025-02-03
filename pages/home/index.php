@@ -40,15 +40,15 @@ $usuarios = $userController->GetAllClientes();
                 <div style="width:100%; gap: 16px; padding: 20px;  display: flex; flex-direction:column; ">
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="name_cliente">Nome</label>
-                        <?php InputComponent("text", "Digite nome", "name_cliente", "") ?>
+                        <?php InputComponent("text", "Digite nome", "name_cliente", null, null) ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="email_cliente">Email</label>
-                        <?php InputComponent("email", "Digite o email", "email_cliente", "") ?>
+                        <?php InputComponent("email", "Digite o email", "email_cliente", null, null) ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="number">Telefone</label>
-                        <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number", "") ?>
+                        <?php InputComponent("number", "Digite o número de telefone (xx) xxxxx-xxxxx", "number", null, null) ?>
                     </div>
                     <div style="width:100%; margin-top:16px;">
                         <?php ButtonComponent("fecharPopup()", "submit", "Cadastrar"); ?>

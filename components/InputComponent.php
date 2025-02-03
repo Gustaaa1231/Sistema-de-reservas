@@ -28,7 +28,7 @@
 }
 </style>
 <?php 
-function InputComponent($typ, $place, $name, $value  ){
-    echo "<input style='font-family: ABeeZee, serif;'name='$name' type='$typ' class='input-field' placeholder='$place' value='$value'>";
+function InputComponent($typ, $place, $name, $value, $read  ){
+    echo "<input style='font-family: ABeeZee, serif;'name='$name' type='$typ' class='input-field' placeholder='$place' value='$value' $read>";
 }
 ?>

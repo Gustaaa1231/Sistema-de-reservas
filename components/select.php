@@ -23,7 +23,7 @@ option{
 
 </style>
 <?php
-function SelectComponent($name, $selectedValue = '') {
+function SelectComponent($name, $selectedValue = '', $read) {
     $options = [
         1 => 'Tenis',
         2 => 'Volei',
@@ -31,14 +31,14 @@ function SelectComponent($name, $selectedValue = '') {
         4 => 'Futsal'
     ];
 
-    echo "<select style='font-family: ABeeZee, serif; width:100%; padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #CCCCCC' name='$name'>";
+    echo "<select style='font-family: ABeeZee, serif; width:100%; padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #CCCCCC' name='$name' $read>";
     foreach ($options as $value => $label) {
         $selected = $value == $selectedValue ? 'selected' : '';
-        echo "<option style='background-color: white; color: black; font-family: ABeeZee, serif;' value='$value' $selected>$label</option>";
+        echo "<option style='background-color: white; color: black; font-family: ABeeZee, serif;' value='$value' $selected, >$label</option>";
     }
     echo "</select>";
 }
 
-function renderSelect($name, $selectedValue = '') {
-    SelectComponent($name, $selectedValue);
+function renderSelect($name, $selectedValue = '', $read) {
+    SelectComponent($name, $selectedValue, $read);
 }

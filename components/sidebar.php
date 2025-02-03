@@ -131,11 +131,11 @@ require "select.php";
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="data_reserva">Data Reserva</label>
-                        <?php InputComponent("date", "", "calendar", null) ?>
+                        <?php InputComponent("date", null, "calendar", null, null) ?>
                     </div>
                     <div style="width:100%; gap:6px; display:flex; flex-direction: column; ">
                         <label for="esporte">Esporte</label>
-                      <?php SelectComponent("local", null); ?>
+                      <?php SelectComponent("local", null, null); ?>
                     </div>
                     <div style="width:100%; margin-top:16px;">
                         <?php ButtonComponent("fecharPopupReserva()", "submit", "Reservar"); ?>
