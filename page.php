@@ -26,9 +26,9 @@
         
                 <form method="POST" style="display: flex; flex-direction:column; gap:10px"  action="backend/router/loginRouter.php?acao=validarLogin">
                     <label for="">Usuário</label>
-                    <?php InputComponent("text", "Usuário", "nome", null)?>
+                    <?php InputComponent("text", "Usuário", "nome", null, null)?>
                     <label for="">Senha</label>
-                    <?php InputComponent("password", "Senha", "senha", null );
+                    <?php InputComponent("password", "Senha", "senha", null, null );
                     ButtonComponent("","submit", "Entrar");?>
 
                     

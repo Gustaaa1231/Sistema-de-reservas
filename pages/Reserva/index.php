@@ -115,13 +115,12 @@ $usuarios = $userController->GetAllClientes();
                         <td><?php echo $usuario['nome']; ?></td>
                         <td><?php echo $usuario['email']; ?></td>
                         <td><?php echo $usuario['telefone']; ?></td>
-                        <td><?php  echo InputComponent("date", null, "calendar", $dataReserva,  "readonly"); ?></td>
-                        <td><?php SelectComponent("local", $idLocal, "disabled"); ?></td>
+                        <td><?php  echo InputComponent("date", null, "calendar", $dataReserva,  null); ?></td>
+                        <td><?php SelectComponent("local", $idLocal, null); ?></td>
                         <td>
                             <?php ButtonComponent("", "submit", "Reservar"); ?>
                             <form action="../../backend/router/reservaRouter.php?acao=deletar" method="POST" style="display:inline;">
                                 <input type="hidden" name="id_cliente" value="<?php echo $usuario['id']; ?>">
-                                <?php ButtonComponent("", "submit", "Deletar"); ?>
                             </form>
                         </td>
                     </form>

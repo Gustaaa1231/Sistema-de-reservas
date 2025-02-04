@@ -108,7 +108,6 @@ class ReservaController
             return [];
         }
     }
-    //Método para buscar os nomes dos clientes
     public function getClientes() {
         try {
             $sql = "SELECT id, nome FROM clientes";
