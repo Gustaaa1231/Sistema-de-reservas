@@ -12,6 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if(!(empty($nome) || empty($senha))){
                 $resposta = $loginController->Login($nome,$senha);
+                echo $resposta;
                 if($resposta){
                     header("Location: ../../pages/home/index.php");
                 }
