@@ -4,17 +4,15 @@ use SistemaDeReservas;
 create table usuario (
 id_usuario int auto_increment primary key,
 nome varchar(30),
-senha varchar(20)
+senha varchar(255)
 );
 insert into usuario (nome, senha)
-values ("Mauricioo", "444");
+values ("Bruna", "ca25b9127870fadea38992e8a01318e44eec83323cdda44b11e0968bde603943");
 
-drop trigger criptografar_senha;
-
-
-insert into usuario values
-(default, 'Bruna Gomes', 'bruninha2610'),
-(default, 'Gustavo dos Santos', 'gusta123');
+create table imagens(
+id int auto_increment primary key,
+nome varchar(100)
+);
 
 create table locais(
 id int auto_increment primary key,
@@ -41,4 +39,4 @@ select * from clientes;
 select * from usuario;
 select * from reservas;
 drop table reservas;
-drop table clientes;
+drop table usuario;
