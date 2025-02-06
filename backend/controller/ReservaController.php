@@ -48,6 +48,20 @@ class ReservaController
             return null;
         }
     }
+    
+    public function VerificarReservaNaData($idCliente, $dataReserva) {
+        try {
+            $sql = "SELECT * FROM reservas WHERE id_cliente = :id_cliente AND data_reserva = :data_reserva";
+            $db = $this->conn->prepare($sql);
+            $db->bindParam(":id_cliente", $idCliente, PDO::PARAM_INT);
+            $db->bindParam(":data_reserva", $dataReserva);
+            $db->execute();
+            return $db->fetch(PDO::FETCH_ASSOC); // Retorna a reserva se existir
+        } catch (\Exception $th) {
+            return false; // Retorna falso se houver erro
+        }
+    }
+    
 
     // Método responsável por verificar se um cliente já tem uma reserva
     public function VerificarReserva($idCliente){

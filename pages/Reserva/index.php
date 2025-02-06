@@ -23,6 +23,18 @@ $usuarios = $userController->GetAllClientes();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <?php
+    if (isset($_GET['error'])) {
+        $error = $_GET['error'];
+        if ($error == 'mesmo_dia') {
+            echo "<p style='color: red;'>Não é permitido fazer reserva no mesmo dia.</p>";
+        } elseif ($error == 'reserva_existente') {
+            echo "<p style='color: red;'>Já existe uma reserva para esta data.</p>";
+        }
+    }
+    
+    
+    ?>
     <style>
         .container {
             padding: 20px;
@@ -110,6 +122,7 @@ $usuarios = $userController->GetAllClientes();
                     $idLocal = $reserva ? $reserva['id_local'] : '';
                 ?>
                 <tr>
+                    
                     <form action="../../backend/router/reservaRouter.php?acao=reservar" method="POST">
                         <input type="hidden" name="id_cliente" value="<?php echo $usuario['id']; ?>">
                         <td><?php echo $usuario['nome']; ?></td>
@@ -128,6 +141,7 @@ $usuarios = $userController->GetAllClientes();
                 <?php endforeach; ?>
             </tbody>
         </table>
+        
     </div>
 </body>
 </html>
